@@ -3,5 +3,10 @@ resource "aws_route53_zone" "cds-snc-ca-zone" {
     comment    = ""
 
     tags {
+        Project = "dns"
     }
+}
+
+output "cds-snc-ca-ns" {
+  value="${aws_route53_zone.cds-snc-ca-zone.name_servers}"
 }

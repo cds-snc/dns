@@ -7,23 +7,6 @@ resource "aws_route53_record" "cds-snc-ca-MX" {
 
 }
 
-resource "aws_route53_record" "cds-snc-ca-NS" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-zone.zone_id}"
-    name    = "cds-snc.ca"
-    type    = "NS"
-    records = ["ns-1936.awsdns-50.co.uk.", "ns-711.awsdns-24.net.", "ns-451.awsdns-56.com.", "ns-1359.awsdns-41.org."]
-    ttl     = "172800"
-
-}
-
-resource "aws_route53_record" "cds-snc-ca-SOA" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-zone.zone_id}"
-    name    = "cds-snc.ca"
-    type    = "SOA"
-    records = ["ns-451.awsdns-56.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"]
-    ttl     = "900"
-
-}
 resource "aws_route53_record" "scph0917-_domainkey-cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-zone.zone_id}"
     name    = "scph0917._domainkey.cds-snc.ca"
