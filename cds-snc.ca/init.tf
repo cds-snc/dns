@@ -34,7 +34,7 @@ resource "aws_iam_user_policy" "circleci_deployer_policy" {
     {
       "Effect": "Allow",
       "Action": ["s3:ListBucket"],
-      "Resource": ["${aws_s3_bucket.backend.arn}"]statu
+      "Resource": ["${aws_s3_bucket.backend.arn}"]
     },
     {
       "Effect": "Allow",
