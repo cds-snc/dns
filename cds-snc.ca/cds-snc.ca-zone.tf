@@ -1,4 +1,4 @@
-resource "aws_route53_zone" "cds-snc-ca-zone" {
+resource "aws_route53_zone" "cds-snc-ca-public" {
     name       = "cds-snc.ca"
     comment    = ""
 
@@ -8,5 +8,5 @@ resource "aws_route53_zone" "cds-snc-ca-zone" {
 }
 
 output "cds-snc-ca-ns" {
-  value="${aws_route53_zone.cds-snc-ca-zone.name_servers}"
+  value="${aws_route53_zone.cds-snc-ca-public.name_servers}"
 }
