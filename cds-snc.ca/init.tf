@@ -2,6 +2,14 @@ provider "aws" {
   region  = "us-east-1"
 }
 
+terraform {
+  backend "s3" {
+    bucket = "cds-dns-terraform-state"
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
 resource "aws_s3_bucket" "backend" {
   bucket = "cds-dns-terraform-state"
   region = "us-east-1"
