@@ -4,6 +4,10 @@ With thanks to our friends at [18f](https://github.com/18F) for the [inspiration
 
 Currently this is limited to managing subdomains of *.cds-snc.ca.  In future, we will expand to include the cdssandbox.xyz domain.
 
+## Why would I need this?
+
+Do you want a pretty URL like `something.cds-snc.ca` for your cool new project?  This is how you do that.
+
 ## Making DNS requests
 
 To request a new subdomain, create a `aws_route53_record` terraform entry and submit a pull request.  A member of the Platform team should review the change and approve it.
