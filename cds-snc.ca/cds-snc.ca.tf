@@ -126,3 +126,14 @@ resource "aws_route53_record" "vqrxkdrwqioudvaw3rrvwb2c6yre5673-_domainkey-cds-s
     ttl     = "1800"
 
 }
+
+resource "aws_route53_record" "azure_cds-snc-ca-TXT" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "@"
+    type    = "TXT"
+    records = [
+        "MS=ms61032497"
+    ]
+    ttl     = "3600"
+
+}
