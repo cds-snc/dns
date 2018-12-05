@@ -1,0 +1,10 @@
+resource "aws_route53_record" "rancher-cds-snc-ca-A" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "rancher.cds-snc.ca"
+    type    = "A"
+    records = [
+        "52.60.202.54"
+    ]
+    ttl     = "300"
+
+}
