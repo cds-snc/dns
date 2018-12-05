@@ -3,7 +3,7 @@ resource "aws_route53_record" "rancher-cds-snc-ca-A" {
     name    = "rancher.cds-snc.ca"
     type    = "A"
     records = [
-        "35.183.102.60"
+        "35.183.198.255"
     ]
     ttl     = "300"
 
