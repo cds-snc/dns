@@ -61,6 +61,7 @@ resource "aws_route53_record" "_amazonses-cds-snc-ca-TXT" {
 
 }
 
+# SES Domain ownership for IRCC account
 resource "aws_route53_record" "_amazonses2-cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "_amazonses.cds-snc.ca"
@@ -137,6 +138,43 @@ resource "aws_route53_record" "vqrxkdrwqioudvaw3rrvwb2c6yre5673-_domainkey-cds-s
     ttl     = "1800"
 
 }
+
+# DKIM records for IRCC account
+resource "aws_route53_record" "jmdsjkhll6xcr45eceudowr3i5biw7m4-_domainkey-cds-snc-ca-CNAME" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "jmdsjkhll6xcr45eceudowr3i5biw7m4._domainkey.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "jmdsjkhll6xcr45eceudowr3i5biw7m4.dkim.amazonses.com"
+    ]
+    ttl     = "1800"
+
+}
+
+# DKIM records for IRCC account
+resource "aws_route53_record" "k64c4rhiqy2utki3pdklkmx4yddgfsvz-_domainkey-cds-snc-ca-CNAME" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "k64c4rhiqy2utki3pdklkmx4yddgfsvz._domainkey.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "k64c4rhiqy2utki3pdklkmx4yddgfsvz.dkim.amazonses.com"
+    ]
+    ttl     = "1800"
+
+}
+
+# DKIM records for IRCC account
+resource "aws_route53_record" "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps-_domainkey-cds-snc-ca-CNAME" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps._domainkey.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps.dkim.amazonses.com"
+    ]
+    ttl     = "1800"
+
+}
+
 
 resource "aws_route53_record" "azure_cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
