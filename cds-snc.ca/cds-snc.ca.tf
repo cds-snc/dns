@@ -61,6 +61,17 @@ resource "aws_route53_record" "_amazonses-cds-snc-ca-TXT" {
 
 }
 
+resource "aws_route53_record" "_amazonses2-cds-snc-ca-TXT" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "_amazonses.cds-snc.ca"
+    type    = "TXT"
+    records = [
+        "rMQZgwOueQecO9q4zjkRsVbPLzwcWWBc+QGXukgqADc="
+    ]
+    ttl     = "1800"
+
+}
+
 resource "aws_route53_record" "_c77e17ef5146ea6fd6ba71f12813c9dc-cds-snc-ca-CNAME" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "_c77e17ef5146ea6fd6ba71f12813c9dc.cds-snc.ca"
