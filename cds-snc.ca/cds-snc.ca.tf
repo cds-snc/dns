@@ -50,23 +50,13 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
 
 }
 
+# SES Domain ownership for IRCC account
 resource "aws_route53_record" "_amazonses-cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "_amazonses.cds-snc.ca"
     type    = "TXT"
     records = [
-        "K4JAa74M8w2vms1T3VFt4GTKY49WVxVAWXa85B2GGwg="
-    ]
-    ttl     = "1800"
-
-}
-
-# SES Domain ownership for IRCC account
-resource "aws_route53_record" "_amazonses2-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
-    name    = "_amazonses.cds-snc.ca"
-    type    = "TXT"
-    records = [
+        "K4JAa74M8w2vms1T3VFt4GTKY49WVxVAWXa85B2GGwg=",
         "rMQZgwOueQecO9q4zjkRsVbPLzwcWWBc+QGXukgqADc="
     ]
     ttl     = "1800"
