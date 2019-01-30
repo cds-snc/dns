@@ -1,9 +1,9 @@
-resource "aws_route53_record" "vac-benefits-finder-cds-snc-ca-A" {
+resource "aws_route53_record" "vac-benefits-finder-cds-snc-ca-CNAME" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "vac-benefits-finder.cds-snc.ca"
-    type    = "A"
+    type    = "CNAME"
     records = [
-        "52.237.20.235"
+        "vac-benefit-finder-app.azurewebsites.net"
     ]
     ttl     = "300"
 
