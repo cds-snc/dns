@@ -74,6 +74,18 @@ resource "aws_route53_record" "_c77e17ef5146ea6fd6ba71f12813c9dc-cds-snc-ca-CNAM
 
 }
 
+# ACM Validation for IRCC Production
+resource "aws_route53_record" "_faa1db50e36e98191aefeeb9548c9165-rescheduler-cds-snc-ca-CNAME" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "_faa1db50e36e98191aefeeb9548c9165.rescheduler.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "_f7f15af1bf1c1c2ee7de91625cfa62e9.tljzshvwok.acm-validations.aws."
+    ]
+    ttl     = "300"
+
+}
+
 resource "aws_route53_record" "doxsxvr6k6upbjhr2ruxm4mqtrxiehuw-_domainkey-cds-snc-ca-CNAME" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "doxsxvr6k6upbjhr2ruxm4mqtrxiehuw._domainkey.cds-snc.ca"
