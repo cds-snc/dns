@@ -3,7 +3,7 @@ resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
     name    = "rescheduler.cds-snc.ca"
     type    = "CNAME"
     records = [
-        "d31g0redbbnj2z.cloudfront.net"
+        "d24ti2cjx5hdfv.cloudfront.net"
     ]
     ttl     = "300"
 
@@ -14,7 +14,7 @@ resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
     name    = "*.rescheduler.cds-snc.ca"
     type    = "CNAME"
     records = [
-        "d31g0redbbnj2z.cloudfront.net"
+        "d24ti2cjx5hdfv.cloudfront.net"
     ]
     ttl     = "300"
 
