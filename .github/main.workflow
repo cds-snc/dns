@@ -1,8 +1,8 @@
 workflow "Lint Terraform files" {
   on = "push"
-  resolves = ["Lint files"]
+  resolves = ["Lint Terraform"]
 }
 
-action "Lint files" {
+action "Lint Terraform" {
   uses = "docker://cdssnc/tf-lint-github-action"
 }
