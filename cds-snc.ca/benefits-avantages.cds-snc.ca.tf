@@ -3,7 +3,7 @@ resource "aws_route53_record" "benefits-avantages-cds-snc-ca-CNAME" {
     name    = "benefits-avantages.cds-snc.ca"
     type    = "CNAME"
     records = [
-        "benefits-avantages.herokuapp.com"
+        "developmental-raven-b8rd2rn5hu8izdje76h0gom5.herokudns.com"
     ]
     ttl     = "300"
 
