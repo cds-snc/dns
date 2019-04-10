@@ -4,7 +4,7 @@ resource "aws_route53_record" "cds-snc-ca-A" {
   type    = "A"
 
   alias {
-    name                   = "redirect-cds-snc-ca-digital-canada-ca.s3-website.us-east-2.amazonaws.com"
+    name                   = "redirect-cds-snc-ca-2-digital-canada-ca.s3-website.us-east-1.amazonaws.com"
     zone_id                = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     evaluate_target_health = true
   }
