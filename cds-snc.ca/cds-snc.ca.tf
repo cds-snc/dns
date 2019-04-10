@@ -5,7 +5,7 @@ resource "aws_route53_record" "cds-snc-ca-A" {
 
   alias {
     name                   = "s3-website.us-east-1.amazonaws.com"
-    zone_id                = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id                = "Z3AQBSTGFYJSTF"
     evaluate_target_health = true
   }
 }
