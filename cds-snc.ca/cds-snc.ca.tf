@@ -1,15 +1,3 @@
-resource "aws_route53_record" "cds-snc-ca-A" {
-  zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
-  name    = "cds-snc.ca"
-  type    = "A"
-
-  alias {
-    name                   = "s3-website-us-east-1.amazonaws.com"
-    zone_id                = "Z3AQBSTGFYJSTF"
-    evaluate_target_health = true
-  }
-}
-
 resource "aws_route53_record" "cds-snc-ca-MX" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "cds-snc.ca"
