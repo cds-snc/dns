@@ -2,7 +2,7 @@ resource "aws_route53_zone" "cds-snc-ca-public" {
     name       = "cds-snc.ca"
     comment    = ""
 
-    tags {
+    tags = {
         Project = "dns"
     }
 }

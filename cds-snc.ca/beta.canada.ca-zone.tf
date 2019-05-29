@@ -2,7 +2,7 @@ resource "aws_route53_zone" "beta-canada-ca-public" {
     name       = "beta.canada.ca"
     comment    = ""
 
-    tags {
+    tags = {
         Project = "dns"
     }
 }
