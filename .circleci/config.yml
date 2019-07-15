@@ -43,7 +43,7 @@ jobs:
 
       - run:
           name: Deploy the full environment
-          command: terraform apply -input=false -auto-approve cds-snc.ca
+          command: terraform apply -input=false -auto-approve cds-snc.ca && terraform apply -input=false -auto-approve alpha.canada.ca
 
 workflows:
   version: 2
