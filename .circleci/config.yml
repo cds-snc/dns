@@ -15,7 +15,7 @@ jobs:
               terraform init -backend=false -input=false alpha.canada.ca
             else
               terraform init -backend-config=cds-snc.ca/backend.tfvars -input=false cds-snc.ca
-              terraform init -backend-config=alpha.canada.ca/backend.tfvars -input=false alpha.canada.ca
+              terraform init -backend-config=alpha.canada.ca/backend.tfvars -input=false -force-copy alpha.canada.ca
             fi
       - run:
           name: Validate Terraform config
