@@ -51,17 +51,6 @@ resource "aws_route53_record" "cds-snc-ca-SOA" {
 
 }
 
-resource "aws_route53_record" "cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
-    name    = "cds-snc.ca"
-    type    = "TXT"
-    records = [
-        "v=spf1 include:_spf.google.com ~all"
-    ]
-    ttl     = "300"
-
-}
-
 # SES Domain ownership for IRCC account
 resource "aws_route53_record" "_amazonses-cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
@@ -177,13 +166,13 @@ resource "aws_route53_record" "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps-_domainkey-cds-s
 
 }
 
-
-resource "aws_route53_record" "azure_cds-snc-ca-TXT" {
+resource "aws_route53_record" "cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "cds-snc.ca"
     type    = "TXT"
     records = [
-        "MS=ms61032497"
+        "MS=ms61032497",
+        "v=spf1 include:_spf.google.com ~all"
     ]
     ttl     = "3600"
 
