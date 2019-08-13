@@ -52,3 +52,14 @@ resource "aws_route53_record" "dkim2-notification-alpha-canada-ca-CNAME" {
     ttl     = "300"
 
 }
+
+resource "aws_route53_record" "dkim3-notification-alpha-canada-ca-CNAME" {
+    zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
+    name    = "vz2jiq72z5wrq5laobwacxqmf4zbp555._domainkey.notification.alpha.canada.ca"
+    type    = "CNAME"
+    records = [
+        "vz2jiq72z5wrq5laobwacxqmf4zbp555.dkim.amazonses.com"
+    ]
+    ttl     = "300"
+
+}
