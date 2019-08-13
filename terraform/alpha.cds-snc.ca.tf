@@ -16,10 +16,9 @@ resource "aws_route53_record" "notification-alpha-cds-snc-ca-A" {
   zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
   name    = "notification.alpha.cds-snc.ca"
   type    = "A"
-
   records = [
     "35.203.112.92"
-    ]
-  ttl     = "300
+  ]
+  ttl     = "300"
    
 }
