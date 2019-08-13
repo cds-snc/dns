@@ -20,7 +20,7 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
 
 }
 
-resource "aws_route53_record" "amazonses.notification.alpha.canada.ca-TXT" {
+resource "aws_route53_record" "amazonses-notification-alpha-canada-ca-TXT" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "_amazonses.notification.alpha.canada.ca"
     type    = "TXT"
@@ -31,7 +31,7 @@ resource "aws_route53_record" "amazonses.notification.alpha.canada.ca-TXT" {
 
 }
 
-resource "aws_route53_record" "dkim1.notification.alpha.canada.ca-CNAME" {
+resource "aws_route53_record" "dkim1-notification-alpha-canada-ca-CNAME" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "izrd743bgdwnthnxcpwktjawyj25ddve._domainkey.notification.alpha.canada.ca"
     type    = "CNAME"
@@ -42,7 +42,7 @@ resource "aws_route53_record" "dkim1.notification.alpha.canada.ca-CNAME" {
 
 }
 
-resource "aws_route53_record" "dkim2.notification.alpha.canada.ca-CNAME" {
+resource "aws_route53_record" "dkim2-notification-alpha-canada-ca-CNAME" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "kez24ldm7sz2cqftttnqjv3mb452swaa._domainkey.notification.alpha.canada.ca"
     type    = "CNAME"
