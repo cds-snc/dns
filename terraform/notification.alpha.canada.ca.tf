@@ -1,9 +1,9 @@
 resource "aws_route53_record" "notification-alpha-canada-ca-A" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "notification.alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
     records = [
-        "35.203.112.92"
+        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 
@@ -12,9 +12,9 @@ resource "aws_route53_record" "notification-alpha-canada-ca-A" {
 resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "api.notification.alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
     records = [
-        "35.203.112.92"
+        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 
@@ -23,9 +23,9 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
 resource "aws_route53_record" "document-notification-alpha-canada-ca-A" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "document.notification.alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
     records = [
-        "35.203.112.92"
+        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 
@@ -34,9 +34,9 @@ resource "aws_route53_record" "document-notification-alpha-canada-ca-A" {
 resource "aws_route53_record" "api-document-notification-alpha-canada-ca-A" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "api.document.notification.alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
     records = [
-        "35.203.112.92"
+        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 
