@@ -48,7 +48,7 @@ resource "aws_route53_record" "amazonses-notification-alpha-canada-ca-TXT" {
     name    = "_amazonses.notification.alpha.canada.ca"
     type    = "TXT"
     records = [
-        "F+pOEXNcTKyLOfjv6vakPH7L7BDJyJWk0z3X4lMEpJk="
+        "0H30fnu5ycQllYqyOt5Urlx1uGlC/c35skW+0MICc+I="
     ]
     ttl     = "300"
 
@@ -56,10 +56,10 @@ resource "aws_route53_record" "amazonses-notification-alpha-canada-ca-TXT" {
 
 resource "aws_route53_record" "dkim1-notification-alpha-canada-ca-CNAME" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
-    name    = "vqaz5umlocfrnmfbflvju6qduqut7i5h._domainkey.notification.alpha.canada.ca"
+    name    = "izrd743bgdwnthnxcpwktjawyj25ddve._domainkey.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "vqaz5umlocfrnmfbflvju6qduqut7i5h.dkim.amazonses.com"
+        "izrd743bgdwnthnxcpwktjawyj25ddve.dkim.amazonses.com"
     ]
     ttl     = "300"
 
@@ -67,10 +67,10 @@ resource "aws_route53_record" "dkim1-notification-alpha-canada-ca-CNAME" {
 
 resource "aws_route53_record" "dkim2-notification-alpha-canada-ca-CNAME" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
-    name    = "hofufbbtcrcvxie3vngnqb6ew3p4qjst._domainkey.notification.alpha.canada.ca"
+    name    = "kez24ldm7sz2cqftttnqjv3mb452swaa._domainkey.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "hofufbbtcrcvxie3vngnqb6ew3p4qjst.dkim.amazonses.com"
+        "kez24ldm7sz2cqftttnqjv3mb452swaa.dkim.amazonses.com"
     ]
     ttl     = "300"
 
@@ -78,10 +78,10 @@ resource "aws_route53_record" "dkim2-notification-alpha-canada-ca-CNAME" {
 
 resource "aws_route53_record" "dkim3-notification-alpha-canada-ca-CNAME" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
-    name    = "t2ihvmsa65nqcjuemxykbsivxbqhecg7._domainkey.notification.alpha.canada.ca"
+    name    = "vz2jiq72z5wrq5laobwacxqmf4zbp555._domainkey.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "t2ihvmsa65nqcjuemxykbsivxbqhecg7.dkim.amazonses.com"
+        "vz2jiq72z5wrq5laobwacxqmf4zbp555.dkim.amazonses.com"
     ]
     ttl     = "300"
 
