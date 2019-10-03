@@ -3,7 +3,7 @@ resource "aws_route53_record" "privacy-statements-cds-alpha-canada-ca-CNAME" {
     name    = "privacy-statements.cds.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "simplify-privacy-statements-v2.herokuapp.com"
+        "radiant-damselfly-fxzk8vc81qdj2jzmuog6ncda.herokudns.com"
     ]
     ttl     = "300"
 }
@@ -13,7 +13,7 @@ resource "aws_route53_record" "avis-confidentialite-snc-alpha-canada-ca-CNAME" {
     name    = "avis-confidentialite.snc.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "simplify-privacy-statements-v2.herokuapp.com"
+        "behavioural-scallop-nlrxwf5edg8eivh9qeu0ai9p.herokudns.com"
     ]
     ttl     = "300"
 }
