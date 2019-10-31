@@ -20,9 +20,6 @@ resource "aws_route53_record" "alpha-canada-ca-A" {
         zone_id                = "Z2FDTNDATAQYW2"
         evaluate_target_health = true
     }
-
-    ttl     = "60"
-
 }
 
 resource "aws_route53_record" "_b3259586aedbdb670a1126167ef4fad9-alpha-canada-ca-CNAME" {
