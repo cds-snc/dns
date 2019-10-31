@@ -11,10 +11,10 @@ output "alpha-canada-ca-ns" {
   value="${aws_route53_zone.alpha-canada-ca-public.name_servers}"
 }
 
-resource "aws_route53_record" "alpha-canada-ca-CNAME" {
+resource "aws_route53_record" "alpha-canada-ca-ALIAS" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "alpha.canada.ca"
-    type    = "CNAME"
+    type    = "ALIAS"
     records = [
         "d2aopswi6c2sr6.cloudfront.net"
     ]
