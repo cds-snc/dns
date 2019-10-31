@@ -14,11 +14,11 @@ output "alpha-canada-ca-ns" {
 resource "aws_route53_record" "alpha-canada-ca-CNAME" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
     records = [
-        "104.198.14.52"
+        "d2aopswi6c2sr6.cloudfront.net"
     ]
-    ttl     = "300"
+    ttl     = "60"
 
 }
 
