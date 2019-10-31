@@ -11,7 +11,7 @@ output "alpha-canada-ca-ns" {
   value="${aws_route53_zone.alpha-canada-ca-public.name_servers}"
 }
 
-resource "aws_route53_record" "alpha-canada-ca-A" {
+resource "aws_route53_record" "alpha-canada-ca-alias" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
     name    = "alpha.canada.ca-alias"
     type    = "A"
