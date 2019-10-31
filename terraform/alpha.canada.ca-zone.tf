@@ -13,7 +13,7 @@ output "alpha-canada-ca-ns" {
 
 resource "aws_route53_record" "alpha-canada-ca-alias" {
     zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
-    name    = "alpha.canada.ca-alias"
+    name    = "alpha.canada.ca"
     type    = "A"
     alias {
         name                   = "d2aopswi6c2sr6.cloudfront.net"
