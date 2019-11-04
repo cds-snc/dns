@@ -1,3 +1,25 @@
+resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "rescheduler.cds-snc.ca"
+    type    = "A"
+    alias {
+        name                   = "d20obzj4l8o79t.cloudfront.net"
+        zone_id                = "Z2FDTNDATAQYW2"
+        evaluate_target_health = true
+    }
+}
+
+resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
+    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    name    = "*.rescheduler.cds-snc.ca"
+    type    = "A"
+    alias {
+        name                   = "d20obzj4l8o79t.cloudfront.net"
+        zone_id                = "Z2FDTNDATAQYW2"
+        evaluate_target_health = true
+    }
+}
+
 resource "aws_route53_record" "_acme-challenge-rescheduler-cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "_acme-challenge.rescheduler.cds-snc.ca"
