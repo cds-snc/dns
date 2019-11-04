@@ -1,25 +1,3 @@
-resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
-    name    = "rescheduler.cds-snc.ca"
-    type    = "CNAME"
-    records = [
-        "d24ti2cjx5hdfv.cloudfront.net"
-    ]
-    ttl     = "300"
-
-}
-
-resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
-    name    = "*.rescheduler.cds-snc.ca"
-    type    = "CNAME"
-    records = [
-        "d24ti2cjx5hdfv.cloudfront.net"
-    ]
-    ttl     = "300"
-
-}
-
 resource "aws_route53_record" "_acme-challenge-rescheduler-cds-snc-ca-TXT" {
     zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
     name    = "_acme-challenge.rescheduler.cds-snc.ca"
