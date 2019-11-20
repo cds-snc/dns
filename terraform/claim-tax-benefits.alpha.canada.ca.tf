@@ -3,7 +3,7 @@ resource "aws_route53_record" "claim-tax-benefits-alpha-canada-ca-CNAME" {
     name    = "claim-tax-benefits.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "ctb-load-balancer-1283705966.ca-central-1.elb.amazonaws.com"
+        "ctb-load-balancer-1982460936.ca-central-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 }
@@ -13,7 +13,7 @@ resource "aws_route53_record" "reclamer-des-avantages-fiscaux-alpha-canada-ca-CN
     name    = "reclamer-des-avantages-fiscaux.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "ctb-load-balancer-1283705966.ca-central-1.elb.amazonaws.com"
+        "ctb-load-balancer-1982460936.ca-central-1.elb.amazonaws.comm"
     ]
     ttl     = "300"
 }
