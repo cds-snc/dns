@@ -128,7 +128,7 @@ resource "aws_route53_record" "notification-alpha-canada-ca-DMARC" {
     name    = "_dmarc.notification.alpha.canada.ca"
     type    = "TXT"
     records = [
-        "v=DMARC1; p=none; sp=none; rua=mailto:dmarc@cyber.gc.ca; rua=mailto:dmarc@cyber.gc.ca"
+        "v=DMARC1; p=none; sp=none; rua=mailto:dmarc@cyber.gc.ca; ruf=mailto:dmarc@cyber.gc.ca"
     ]
     ttl     = "300"
 
