@@ -111,3 +111,25 @@ resource "aws_route53_record" "dkim3-notification-alpha-canada-ca-CNAME" {
     ttl     = "300"
 
 }
+
+resource "aws_route53_record" "notification-alpha-canada-ca-SPF" {
+    zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
+    name    = "notification.alpha.canada.ca"
+    type    = "TXT"
+    records = [
+        "v=spf1 include:amazonses.com ~all"
+    ]
+    ttl     = "300"
+
+}
+
+resource "aws_route53_record" "notification-alpha-canada-ca-DMARC" {
+    zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
+    name    = "_dmarc.notification.alpha.canada.ca"
+    type    = "TXT"
+    records = [
+        "v=DMARC1; p=none; sp=none; rua=mailto:dmarc@cyber.gc.ca; ruf=mailto:dmarc@cyber.gc.ca"
+    ]
+    ttl     = "300"
+
+}
