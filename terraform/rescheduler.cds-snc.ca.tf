@@ -1,5 +1,5 @@
 resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "rescheduler.cds-snc.ca"
     type    = "A"
     alias {
@@ -10,7 +10,7 @@ resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
 }
 
 resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "*.rescheduler.cds-snc.ca"
     type    = "A"
     alias {
@@ -21,7 +21,7 @@ resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
 }
 
 resource "aws_route53_record" "_acme-challenge-rescheduler-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_acme-challenge.rescheduler.cds-snc.ca"
     type    = "TXT"
     records = [
@@ -33,7 +33,7 @@ resource "aws_route53_record" "_acme-challenge-rescheduler-cds-snc-ca-TXT" {
 }
 
 resource "aws_route53_record" "_faa1db50e36e98191aefeeb9548c9165-rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_faa1db50e36e98191aefeeb9548c9165.rescheduler.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -44,7 +44,7 @@ resource "aws_route53_record" "_faa1db50e36e98191aefeeb9548c9165-rescheduler-cds
 }
 
 resource "aws_route53_record" "_9ad5e390e0591a7c0fee72f5280dc709-rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_9ad5e390e0591a7c0fee72f5280dc709.rescheduler.cds-snc.ca."
     type    = "CNAME"
     records = [

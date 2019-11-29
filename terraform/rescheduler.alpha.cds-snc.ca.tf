@@ -1,5 +1,5 @@
 resource "aws_route53_record" "_acm-validation-rescheduler-alpha-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_124e31a4e6b52e341c197ae439978b0e.rescheduler.alpha.cds-snc.ca."
     type    = "CNAME"
     records = [

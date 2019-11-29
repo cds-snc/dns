@@ -1,5 +1,5 @@
 resource "aws_route53_record" "alpha-cds-snc-ca-ns" {
-  zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
   name    = "alpha.cds-snc.ca"
   type    = "NS"
   ttl     = "30"
@@ -13,7 +13,7 @@ resource "aws_route53_record" "alpha-cds-snc-ca-ns" {
 }
 
 resource "aws_route53_record" "notification-alpha-cds-snc-ca-A" {
-  zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
   name    = "notification.alpha.cds-snc.ca"
   type    = "A"
   records = [

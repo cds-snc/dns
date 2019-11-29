@@ -19,7 +19,7 @@ On merge, changes are deployed to Route53 automatically by a CircleCI job.
 Subdomain with a CNAME record directing traffic to a Cloudfront endpoint:
 ```
 resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "*.rescheduler.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -33,7 +33,7 @@ resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
 Subdomain with an A record directing traffic to an IP address:
 ```
 resource "aws_route53_record" "ebrief-cds-snc-ca-A" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "ebrief.cds-snc.ca"
     type    = "A"
     records = [

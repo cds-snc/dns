@@ -1,5 +1,5 @@
 resource "aws_route53_record" "a11y-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "a11y.cds-snc.ca"
     type    = "CNAME"
     records = [

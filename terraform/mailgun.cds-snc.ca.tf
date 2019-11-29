@@ -1,5 +1,5 @@
 resource "aws_route53_record" "mailgun-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "mailgun.cds-snc.ca"
     type    = "TXT"
     records = [
@@ -10,7 +10,7 @@ resource "aws_route53_record" "mailgun-cds-snc-ca-TXT" {
 }
 
 resource "aws_route53_record" "pic-_domainkey-mailgun-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "pic._domainkey.mailgun.cds-snc.ca"
     type    = "TXT"
     records = [

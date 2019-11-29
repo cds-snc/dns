@@ -1,5 +1,5 @@
 resource "aws_route53_record" "rescheduler-dev-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "rescheduler-dev.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -10,7 +10,7 @@ resource "aws_route53_record" "rescheduler-dev-cds-snc-ca-CNAME" {
 }
 
 resource "aws_route53_record" "wildcard-rescheduler-dev-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "*.rescheduler-dev.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -21,7 +21,7 @@ resource "aws_route53_record" "wildcard-rescheduler-dev-cds-snc-ca-CNAME" {
 }
 
 resource "aws_route53_record" "_6ad6e4d2289f5b17d4761e6a95fe53ee-rescheduler-dev-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_6ad6e4d2289f5b17d4761e6a95fe53ee.rescheduler-dev.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -32,7 +32,7 @@ resource "aws_route53_record" "_6ad6e4d2289f5b17d4761e6a95fe53ee-rescheduler-dev
 }
 
 resource "aws_route53_record" "_acme-challenge-rescheduler-dev-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_acme-challenge.rescheduler-dev.cds-snc.ca"
     type    = "TXT"
     records = [
