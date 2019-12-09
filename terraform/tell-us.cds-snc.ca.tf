@@ -1,5 +1,5 @@
 resource "aws_route53_record" "tell-us-cds-snc-ca-A" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "tell-us.cds-snc.ca"
     type    = "A"
     records = [
@@ -10,7 +10,7 @@ resource "aws_route53_record" "tell-us-cds-snc-ca-A" {
 }
 
 resource "aws_route53_record" "racontez-nous-cds-snc-ca-A" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "racontez-nous.cds-snc.ca"
     type    = "A"
     records = [

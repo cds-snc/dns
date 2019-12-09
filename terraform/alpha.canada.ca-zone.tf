@@ -12,7 +12,7 @@ output "alpha-canada-ca-ns" {
 }
 
 resource "aws_route53_record" "alpha-canada-ca-alias" {
-    zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "alpha.canada.ca"
     type    = "A"
     alias {
@@ -23,7 +23,7 @@ resource "aws_route53_record" "alpha-canada-ca-alias" {
 }
 
 resource "aws_route53_record" "_b3259586aedbdb670a1126167ef4fad9-alpha-canada-ca-CNAME" {
-    zone_id = "${aws_route53_zone.alpha-canada-ca-public.zone_id}"
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "_b3259586aedbdb670a1126167ef4fad9.alpha.canada.ca"
     type    = "CNAME"
     records = [

@@ -1,5 +1,5 @@
 resource "aws_route53_record" "cds-snc-ca-A" {
-  zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
   name    = "cds-snc.ca"
   type    = "A"
 
@@ -11,7 +11,7 @@ resource "aws_route53_record" "cds-snc-ca-A" {
 }
 
 resource "aws_route53_record" "cds-snc-ca-MX" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "cds-snc.ca"
     type    = "MX"
     records = [
@@ -27,7 +27,7 @@ resource "aws_route53_record" "cds-snc-ca-MX" {
 }
 
 resource "aws_route53_record" "cds-snc-ca-NS" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "cds-snc.ca"
     type    = "NS"
     records = [
@@ -41,7 +41,7 @@ resource "aws_route53_record" "cds-snc-ca-NS" {
 }
 
 resource "aws_route53_record" "cds-snc-ca-SOA" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "cds-snc.ca"
     type    = "SOA"
     records = [
@@ -53,7 +53,7 @@ resource "aws_route53_record" "cds-snc-ca-SOA" {
 
 # SES Domain ownership for IRCC account
 resource "aws_route53_record" "_amazonses-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_amazonses.cds-snc.ca"
     type    = "TXT"
     records = [
@@ -65,7 +65,7 @@ resource "aws_route53_record" "_amazonses-cds-snc-ca-TXT" {
 }
 
 resource "aws_route53_record" "_c77e17ef5146ea6fd6ba71f12813c9dc-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "_c77e17ef5146ea6fd6ba71f12813c9dc.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -76,7 +76,7 @@ resource "aws_route53_record" "_c77e17ef5146ea6fd6ba71f12813c9dc-cds-snc-ca-CNAM
 }
 
 resource "aws_route53_record" "doxsxvr6k6upbjhr2ruxm4mqtrxiehuw-_domainkey-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "doxsxvr6k6upbjhr2ruxm4mqtrxiehuw._domainkey.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -87,7 +87,7 @@ resource "aws_route53_record" "doxsxvr6k6upbjhr2ruxm4mqtrxiehuw-_domainkey-cds-s
 }
 
 resource "aws_route53_record" "google-_domainkey-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "google._domainkey.cds-snc.ca"
     type    = "TXT"
     records = [
@@ -98,7 +98,7 @@ resource "aws_route53_record" "google-_domainkey-cds-snc-ca-TXT" {
 }
 
 resource "aws_route53_record" "huaraq4dvcwl4dfjicrvjuyhod2zgyvz-_domainkey-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "huaraq4dvcwl4dfjicrvjuyhod2zgyvz._domainkey.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -109,7 +109,7 @@ resource "aws_route53_record" "huaraq4dvcwl4dfjicrvjuyhod2zgyvz-_domainkey-cds-s
 }
 
 resource "aws_route53_record" "scph0917-_domainkey-cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "scph0917._domainkey.cds-snc.ca"
     type    = "TXT"
     records = [
@@ -120,7 +120,7 @@ resource "aws_route53_record" "scph0917-_domainkey-cds-snc-ca-TXT" {
 }
 
 resource "aws_route53_record" "vqrxkdrwqioudvaw3rrvwb2c6yre5673-_domainkey-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "vqrxkdrwqioudvaw3rrvwb2c6yre5673._domainkey.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -132,7 +132,7 @@ resource "aws_route53_record" "vqrxkdrwqioudvaw3rrvwb2c6yre5673-_domainkey-cds-s
 
 # DKIM records for IRCC account
 resource "aws_route53_record" "jmdsjkhll6xcr45eceudowr3i5biw7m4-_domainkey-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "jmdsjkhll6xcr45eceudowr3i5biw7m4._domainkey.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -144,7 +144,7 @@ resource "aws_route53_record" "jmdsjkhll6xcr45eceudowr3i5biw7m4-_domainkey-cds-s
 
 # DKIM records for IRCC account
 resource "aws_route53_record" "k64c4rhiqy2utki3pdklkmx4yddgfsvz-_domainkey-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "k64c4rhiqy2utki3pdklkmx4yddgfsvz._domainkey.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -156,7 +156,7 @@ resource "aws_route53_record" "k64c4rhiqy2utki3pdklkmx4yddgfsvz-_domainkey-cds-s
 
 # DKIM records for IRCC account
 resource "aws_route53_record" "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps-_domainkey-cds-snc-ca-CNAME" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps._domainkey.cds-snc.ca"
     type    = "CNAME"
     records = [
@@ -167,7 +167,7 @@ resource "aws_route53_record" "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps-_domainkey-cds-s
 }
 
 resource "aws_route53_record" "cds-snc-ca-TXT" {
-    zone_id = "${aws_route53_zone.cds-snc-ca-public.zone_id}"
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "cds-snc.ca"
     type    = "TXT"
     records = [
