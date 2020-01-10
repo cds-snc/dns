@@ -3,7 +3,7 @@ resource "aws_route53_record" "signalez-un-crime-informatique-cds-snc-ca-A" {
     name    = "signalez-un-crime-informatique.cds-snc.ca"
     type    = "A"
     records = [
-			"52.237.32.127"
+        "13.71.170.130"
     ]
     ttl     = "300"
 
