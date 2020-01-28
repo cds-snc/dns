@@ -133,3 +133,17 @@ resource "aws_route53_record" "notification-alpha-canada-ca-DMARC" {
     ttl     = "300"
 
 }
+
+resource "aws_route53_record" "m-notification-alpha-canada-ca-NS" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "m.notification.alpha.canada.ca"
+    type    = "NS"
+    records = [
+        "ns-506.awsdns-63.com",
+        "ns-865.awsdns-44.net",
+        "ns-2019.awsdns-60.co.uk",
+        "ns-1201.awsdns-22.org"
+    ]
+    ttl     = "30"
+
+}
