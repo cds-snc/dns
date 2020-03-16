@@ -191,7 +191,7 @@ resource "aws_route53_record" "assistance-cds-snc-ca-CNAME" {
 
 resource "aws_route53_record" "assistance-cds-snc-ca-TXT" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
-    name    = "assistance.cds-snc.ca"
+    name    = "fdkey.assistance.cds-snc.ca"
     type    = "TXT"
     records = [
         "b0207575c0143a0db62f4aa76fa88a80 "
