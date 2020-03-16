@@ -15,11 +15,11 @@ resource "aws_route53_record" "cds-snc-ca-MX" {
     name    = "cds-snc.ca"
     type    = "MX"
     records = [
-        "1 aspmx.l.google.com.", 
-        "5 alt1.aspmx.l.google.com.", 
-        "5 alt2.aspmx.l.google.com.", 
-        "10 alt3.aspmx.l.google.com.", 
-        "10 alt4.aspmx.l.google.com.", 
+        "1 aspmx.l.google.com.",
+        "5 alt1.aspmx.l.google.com.",
+        "5 alt2.aspmx.l.google.com.",
+        "10 alt3.aspmx.l.google.com.",
+        "10 alt4.aspmx.l.google.com.",
         "15 2ucw6y27ggthkqfli3z6jt7ctyyzkkuij2gdrw4wwtvljx7tawbq.mx-verification.google.com."
     ]
     ttl     = "1800"
@@ -31,9 +31,9 @@ resource "aws_route53_record" "cds-snc-ca-NS" {
     name    = "cds-snc.ca"
     type    = "NS"
     records = [
-        "ns-451.awsdns-56.com.", 
-        "ns-1359.awsdns-41.org.", 
-        "ns-1936.awsdns-50.co.uk.", 
+        "ns-451.awsdns-56.com.",
+        "ns-1359.awsdns-41.org.",
+        "ns-1936.awsdns-50.co.uk.",
         "ns-711.awsdns-24.net."
     ]
     ttl     = "172800"
@@ -199,3 +199,26 @@ resource "aws_route53_record" "assistance-cds-snc-ca-TXT" {
     ttl     = "3600"
 
 }
+
+resource "aws_route53_record" "notification-assistance-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "notification.assistance.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "cds-snc.freshdesk.com",
+    ]
+    ttl     = "3600"
+
+}
+
+resource "aws_route53_record" "notification-assistance-cds-snc-ca-TXT" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "fdkey.notification.assistance.cds-snc.ca"
+    type    = "TXT"
+    records = [
+        "b0207575c0143a0db62f4aa76fa88a80  "
+    ]
+    ttl     = "3600"
+
+}
+
