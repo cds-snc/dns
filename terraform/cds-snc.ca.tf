@@ -222,3 +222,15 @@ resource "aws_route53_record" "notification-assistance-cds-snc-ca-TXT" {
 
 }
 
+
+# status page
+resource "aws_route53_record" "status-cds-snc-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "status-statut.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "domains.statuspal.io"
+    ]
+    ttl     = "1800"
+
+}
