@@ -177,3 +177,25 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
     ttl     = "3600"
 
 }
+
+resource "aws_route53_record" "assistance-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "assistance.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "cds-snc.freshdesk.com",
+    ]
+    ttl     = "3600"
+
+}
+
+resource "aws_route53_record" "assistance-cds-snc-ca-TXT" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "fdkey.assistance.cds-snc.ca"
+    type    = "TXT"
+    records = [
+        "b0207575c0143a0db62f4aa76fa88a80 "
+    ]
+    ttl     = "3600"
+
+}
