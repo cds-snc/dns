@@ -172,7 +172,7 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
     type    = "TXT"
     records = [
         "MS=ms61032497",
-        "v=spf1 include:_spf.google.com ~all"
+        "v=spf1 include:_spf.google.com include:email.freshdesk.com ~all"
     ]
     ttl     = "3600"
 
