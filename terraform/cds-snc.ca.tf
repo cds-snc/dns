@@ -183,7 +183,7 @@ resource "aws_route53_record" "assistance-cds-snc-ca-CNAME" {
     name    = "assistance.cds-snc.ca"
     type    = "CNAME"
     records = [
-        "cds-snc.freshdesk.com",
+        "fdus-lb1-d59.freshdesk.com",
     ]
     ttl     = "3600"
 
