@@ -1,6 +1,6 @@
-resource "aws_route53_record" "medical-devices-tbs-alpha-canada-ca-A" {
+resource "aws_route53_record" "web-templates-pspc-alpha-canada-ca-A" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name    = "medical-devices.tbs.alpha.canada.ca"
+  name    = "web-templates.pspc.alpha.canada.ca"
   type    = "A"
   records = [
     "52.237.15.42"

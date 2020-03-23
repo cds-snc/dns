@@ -1,6 +1,6 @@
-resource "aws_route53_record" "wayfinding-tbs-alpha-canada-ca-A" {
+resource "aws_route53_record" "drupal-pilot-cer-alpha-canada-ca-A" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name    = "wayfinding.tbs.alpha.canada.ca"
+  name    = "drupal-pilot.cer.alpha.canada.ca"
   type    = "A"
   records = [
     "52.237.15.42"
