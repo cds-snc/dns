@@ -205,7 +205,7 @@ resource "aws_route53_record" "notification-assistance-cds-snc-ca-CNAME" {
     name    = "notification.assistance.cds-snc.ca"
     type    = "CNAME"
     records = [
-        "cds-snc.freshdesk.com",
+        "fdus-lb1-d60.freshdesk.com",
     ]
     ttl     = "3600"
 
