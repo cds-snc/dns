@@ -72,7 +72,7 @@ resource "aws_route53_record" "notification-alpha-canada-ca-ACM-cname" {
     name    = "_73714e81c7f7350e34a22f64fc6892bf.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "_d6f462435ba01046692930d7774565d4.nhqijqilxf.acm-validations.aws"
+        "_d6f462435ba01046692930d7774565d4.nhqijqilxf.acm-validations.aws."
     ]
     ttl     = "300"
 
