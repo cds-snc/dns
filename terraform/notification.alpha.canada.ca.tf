@@ -67,6 +67,17 @@ resource "aws_route53_record" "api-document-notification-alpha-canada-ca-A" {
 
 }
 
+resource "aws_route53_record" "notification-alpha-canada-ca-ACM-cname" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "_73714e81c7f7350e34a22f64fc6892bf.notification.alpha.canada.ca"
+    type    = "CNAME"
+    records = [
+        "_d6f462435ba01046692930d7774565d4.nhqijqilxf.acm-validations.aws."
+    ]
+    ttl     = "300"
+
+}
+
 
 resource "aws_route53_record" "amazonses-notification-alpha-canada-ca-TXT" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
