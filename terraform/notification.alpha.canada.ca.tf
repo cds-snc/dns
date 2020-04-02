@@ -10,7 +10,7 @@ resource "aws_route53_record" "notification-alpha-canada-ca-A" {
     }
 
     alias {
-        name                   = "dualstack.ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com."
+        name                   = "dualstack.notify-alb-235715269.us-east-1.elb.amazonaws.com."
         zone_id                = "Z35SXDOTRQ7X7K"
         evaluate_target_health = true
     }
@@ -39,7 +39,7 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
     name    = "api.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
+        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 
@@ -50,7 +50,7 @@ resource "aws_route53_record" "document-notification-alpha-canada-ca-A" {
     name    = "document.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
+        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
     ]
     ttl     = "300"
 
@@ -61,7 +61,18 @@ resource "aws_route53_record" "api-document-notification-alpha-canada-ca-A" {
     name    = "api.document.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "ac88d4ecee38411e9bb370e1a3d936eb-1183239765.us-east-1.elb.amazonaws.com"
+        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+    ]
+    ttl     = "300"
+
+}
+
+resource "aws_route53_record" "notification-alpha-canada-ca-ACM-cname" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "_73714e81c7f7350e34a22f64fc6892bf.notification.alpha.canada.ca"
+    type    = "CNAME"
+    records = [
+        "_d6f462435ba01046692930d7774565d4.nhqijqilxf.acm-validations.aws."
     ]
     ttl     = "300"
 
@@ -128,7 +139,7 @@ resource "aws_route53_record" "notification-alpha-canada-ca-DMARC" {
     name    = "_dmarc.notification.alpha.canada.ca"
     type    = "TXT"
     records = [
-        "v=DMARC1; p=none; sp=none; rua=mailto:dmarc@cyber.gc.ca; ruf=mailto:dmarc@cyber.gc.ca"
+        "v=DMARC1; p=reject; sp=reject; pct=100; rua=mailto:dmarc@cyber.gc.ca; ruf=mailto:dmarc@cyber.gc.ca"
     ]
     ttl     = "300"
 
