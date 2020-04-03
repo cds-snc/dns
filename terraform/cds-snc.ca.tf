@@ -166,6 +166,7 @@ resource "aws_route53_record" "npuzzfyyhodvef3vwrj6qdu4tjqkw5ps-_domainkey-cds-s
 
 }
 
+#Freshdesk SPF
 resource "aws_route53_record" "cds-snc-ca-TXT" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "cds-snc.ca"
@@ -178,6 +179,7 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
 
 }
 
+#Freshdesk CNAME 1/4
 resource "aws_route53_record" "assistance-cds-snc-ca-CNAME" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "assistance.cds-snc.ca"
@@ -189,6 +191,7 @@ resource "aws_route53_record" "assistance-cds-snc-ca-CNAME" {
 
 }
 
+#Freshdesk CNAME 2/4
 resource "aws_route53_record" "assistance-cds-snc-ca-TXT" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "fdkey.assistance.cds-snc.ca"
@@ -200,6 +203,7 @@ resource "aws_route53_record" "assistance-cds-snc-ca-TXT" {
 
 }
 
+#Freshdesk CNAME 3/4
 resource "aws_route53_record" "notification-assistance-cds-snc-ca-CNAME" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "notification.assistance.cds-snc.ca"
@@ -211,6 +215,7 @@ resource "aws_route53_record" "notification-assistance-cds-snc-ca-CNAME" {
 
 }
 
+#Freshdesk CNAME 4/4
 resource "aws_route53_record" "notification-assistance-cds-snc-ca-TXT" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "fdkey.notification.assistance.cds-snc.ca"
