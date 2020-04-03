@@ -227,6 +227,53 @@ resource "aws_route53_record" "notification-assistance-cds-snc-ca-TXT" {
 
 }
 
+#Freshdesk DKIM 1/4
+resource "aws_route53_record" "xhlsf-domainkey-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "xhlsf._domainkey.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "wl2201s1.domainkey.freshemail.io"
+    ]
+    ttl     = "3600"
+
+}
+
+#Freshdesk DKIM 2/4
+resource "aws_route53_record" "epvl8-domainkey-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "epvl8._domainkey.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "wl2201s2.domainkey.freshemail.io"
+    ]
+    ttl     = "3600"
+
+}
+
+#Freshdesk DKIM 3/4
+resource "aws_route53_record" "pgl0m-domainkey-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "pgl0m._domainkey.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "wl2201s3.domainkey.freshemail.io"
+    ]
+    ttl     = "3600"
+
+}
+
+#Freshdesk DKIM 4/4
+resource "aws_route53_record" "fwdkim-domainkey-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "fwdkim.cds-snc.ca"
+    type    = "CNAME"
+    records = [
+        "spfmx1.domainkey.freshemail.io"
+    ]
+    ttl     = "3600"
+
+}
 
 # status page
 resource "aws_route53_record" "status-cds-snc-CNAME" {
