@@ -3,7 +3,7 @@ resource "aws_route53_record" "opencall-appelouvert-alpha-canada-ca-A" {
   name    = "opencall-appelouvert.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "cds-snc.github.io"
+    "dc4vvh422odpa.cloudfront.net"
   ]
   ttl     = "300"
 }
