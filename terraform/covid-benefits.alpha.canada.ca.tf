@@ -13,7 +13,7 @@ resource "aws_route53_record" "covid-prestations-alpha-canada-ca-CNAME" {
     name    = "covid-prestations.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "cv19benefits-appservice.azurewebsites.net"
+        "espbdtscb19appservice.azurewebsites.net"
     ]
     ttl     = "300"
 }
