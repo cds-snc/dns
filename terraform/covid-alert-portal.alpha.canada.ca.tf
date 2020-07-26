@@ -3,7 +3,7 @@ resource "aws_route53_record" "covid-alert-portal-alpha-canada-ca-CNAME" {
     name    = "covid-alert-portal.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "production-covid-health-worker-portal.eba-22kbjprv.ca-central-1.elasticbeanstalk.com"
+        "production.terraform.covid-hcportal.cdssandbox.xyz"
     ]
     ttl     = "300"
 }
@@ -14,7 +14,7 @@ resource "aws_route53_record" "portail-alerte-covid-alpha-canada-ca-CNAME" {
     name    = "portail-alerte-covid.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "production-covid-health-worker-portal.eba-22kbjprv.ca-central-1.elasticbeanstalk.com"
+        "production.terraform.covid-hcportal.cdssandbox.xyz"
     ]
     ttl     = "300"
 }
