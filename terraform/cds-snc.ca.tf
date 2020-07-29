@@ -230,7 +230,7 @@ resource "aws_route53_record" "covid-assistance-cds-snc-ca-CNAME" {
     name    = "covid.assistance.cds-snc.ca"
     type    = "CNAME"
     records = [
-        "cds-snc.freshdesk.com",
+        "fdus-lb27-d35.freshdesk.com",
     ]
     ttl     = "3600"
 
