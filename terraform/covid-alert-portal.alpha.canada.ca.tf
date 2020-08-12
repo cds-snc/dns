@@ -3,7 +3,7 @@ resource "aws_route53_record" "covid-alert-portal-alpha-canada-ca-CNAME" {
     name    = "covid-alert-portal.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "production.terraform.covid-hcportal.cdssandbox.xyz"
+        "production.covid-portal.cdssandbox.xyz"
     ]
     ttl     = "300"
 }
@@ -14,27 +14,27 @@ resource "aws_route53_record" "portail-alerte-covid-alpha-canada-ca-CNAME" {
     name    = "portail-alerte-covid.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "production.terraform.covid-hcportal.cdssandbox.xyz"
+        "production.covid-portal.cdssandbox.xyz"
     ]
     ttl     = "300"
 }
 
 resource "aws_route53_record" "validation-portail-alerte-covid-alpha-canada-ca-CNAME" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-    name    = "_b5da3cf311e50a1f6ce651c033bef156.portail-alerte-covid.alpha.canada.ca."
+    name    = "_3ba860f222938a98267338955da3e5ca.portail-alerte-covid.alpha.canada.ca."
     type    = "CNAME"
     records = [
-        "_530f117a685c6f7186bd6b757db1e9b0.jfrzftwwjs.acm-validations.aws."
+        "_47b1646b80bc5860253dd09b3dde5be4.jfrzftwwjs.acm-validations.aws."
     ]
     ttl     = "300"
 }
 
 resource "aws_route53_record" "validation-covid-alert-portal-alpha-canada-ca-CNAME" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-    name    = "_c8894359086d569aa3b6486fbf9a0138.covid-alert-portal.alpha.canada.ca."
+    name    = "_c5a216ebd2eef783096011059aaeb206.covid-alert-portal.alpha.canada.ca."
     type    = "CNAME"
     records = [
-        "_acc5da9ec564ae677f38d06c8cf396e8.jfrzftwwjs.acm-validations.aws."
+        "_655c0c07e4cf58945b17ca3709fe1f5a.jfrzftwwjs.acm-validations.aws."
     ]
     ttl     = "300"
 }
