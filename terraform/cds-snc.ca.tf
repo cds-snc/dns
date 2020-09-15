@@ -26,6 +26,18 @@ resource "aws_route53_record" "cds-snc-ca-MX" {
 
 }
 
+# DMARC Policy, currently in audit mode, progress to reject mode after review.
+resource "aws_route53_record" "_dmarc-cds-snc-ca-TXT" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "_dmarc.cds-snc.ca"
+    type    = "TXT"
+    records = [
+        "v=DMARC1; p=none; sp=none; pct=100; rua=mailto:dmarc@cyber.gc.ca"
+    ]
+    ttl     = "300"
+
+}
+
 resource "aws_route53_record" "cds-snc-ca-NS" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "cds-snc.ca"
