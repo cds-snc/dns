@@ -172,7 +172,7 @@ resource "aws_route53_record" "m-notification-alpha-canada-ca-NS" {
 
 resource "aws_route53_record" "pbmm-notification-alpha-canada-ca-ACM-cname" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-    name    = "_a07b492def227e59365aab830dfbe21a.alpha.notification.canada.ca."
+    name    = "_a07b492def227e59365aab830dfbe21a.alpha.notification.canada.ca"
     type    = "CNAME"
     records = [
         "_f8291d5f10595f37e7a33d28c75bc10d.wggjkglgrm.acm-validations.aws."
@@ -192,7 +192,7 @@ resource "aws_route53_record" "pbmm-document-notification-alpha-canada-ca-ACM-cn
 
 resource "aws_route53_record" "pbmm-notification-canada-ca-ACM-cname" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-    name    = "_2115a5004ab7895234c60254e152046b.notification.canada.ca."
+    name    = "_2115a5004ab7895234c60254e152046b.notification.canada.ca"
     type    = "CNAME"
     records = [
         "_aaacd89cd470de0970c70c7ab1b7d4d5.wggjkglgrm.acm-validations.aws."
