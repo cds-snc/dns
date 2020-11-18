@@ -63,7 +63,7 @@ resource "aws_route53_record" "dkim3-notification-canada-ca-CNAME" {
 
 resource "aws_route53_record" "notification-canada-ca-SPF" {
     zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
-    name    = "notification.alpha.canada.ca"
+    name    = "notification.canada.ca"
     type    = "TXT"
     records = [
         "v=spf1 include:amazonses.com ~all"
@@ -73,7 +73,7 @@ resource "aws_route53_record" "notification-canada-ca-SPF" {
 
 resource "aws_route53_record" "notification-canada-ca-DMARC" {
     zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
-    name    = "_dmarc.notification.alpha.canada.ca"
+    name    = "_dmarc.notification.canada.ca"
     type    = "TXT"
     records = [
         "v=DMARC1; p=reject; sp=reject; pct=100; rua=mailto:dmarc@cyber.gc.ca"
