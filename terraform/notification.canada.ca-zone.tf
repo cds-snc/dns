@@ -80,3 +80,13 @@ resource "aws_route53_record" "notification-canada-ca-DMARC" {
     ]
     ttl     = "300"
 }
+
+resource "aws_route53_record" "amazonses-notification-canada-ca-TXT" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "_amazonses.notification.canada.ca"
+    type    = "TXT"
+    records = [
+        "Ohfl/Syh3ZT5U/7IKELTCXIRaqI42ZJiw0HiUQoCHww="
+    ]
+    ttl     = "300"
+}
