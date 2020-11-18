@@ -26,7 +26,7 @@ resource "aws_route53_record" "notification-alpha-canada-ca-A-failover" {
     failover_routing_policy {
         type = "SECONDARY"
     }
-    
+
     alias {
         name                   = "s3-website.ca-central-1.amazonaws.com"
         zone_id                = "Z1QDHH18159H29"
@@ -168,4 +168,44 @@ resource "aws_route53_record" "m-notification-alpha-canada-ca-NS" {
     ]
     ttl     = "30"
 
+}
+
+resource "aws_route53_record" "pbmm-notification-alpha-canada-ca-ACM-cname" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "_a07b492def227e59365aab830dfbe21a.alpha.notification.canada.ca."
+    type    = "CNAME"
+    records = [
+        "_f8291d5f10595f37e7a33d28c75bc10d.wggjkglgrm.acm-validations.aws."
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "pbmm-document-notification-alpha-canada-ca-ACM-cname" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "_0c4462819f8f2c25376092ba4e0eab1f.document.alpha.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        "_4dd0ef2252498893a7fdf8a8c5d968b9.wggjkglgrm.acm-validations.aws."
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "pbmm-notification-canada-ca-ACM-cname" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "_2115a5004ab7895234c60254e152046b.notification.canada.ca."
+    type    = "CNAME"
+    records = [
+        "_aaacd89cd470de0970c70c7ab1b7d4d5.wggjkglgrm.acm-validations.aws."
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "pbmm-document-notification-canada-ca-ACM-cname" {
+    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+    name    = "_db43d1cf891afd4671fb913d18ef0a0e.document.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        "_130ea19fa1fdd9e59b7632fbac0d7e00.wggjkglgrm.acm-validations.aws."
+    ]
+    ttl     = "300"
 }
