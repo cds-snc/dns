@@ -90,3 +90,23 @@ resource "aws_route53_record" "amazonses-notification-canada-ca-TXT" {
     ]
     ttl     = "300"
 }
+
+resource "aws_route53_record" "amazonses-mail-from-notification-canada-ca-TXT" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "bounce.notification.canada.ca"
+    type    = "TXT"
+    records = [
+        "v=spf1 include:amazonses.com ~all"
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "amazonses-mail-from-notification-canada-ca-MX" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "bounce.notification.canada.ca"
+    type    = "MX"
+    records = [
+        "10 feedback-smtp.ca-central-1.amazonses.com"
+    ]
+    ttl     = "300"
+}
