@@ -41,6 +41,16 @@ resource "aws_route53_record" "assets-notification-canada-ca-ACM-cname" {
     ttl     = "300"
 }
 
+resource "aws_route53_record" "assets-notification-canada-ca-cname" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "assets.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        "d1spq0ojswv1dj.cloudfront.net"
+    ]
+    ttl     = "300"
+}
+
 resource "aws_route53_record" "dkim1-notification-canada-ca-CNAME" {
     zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
     name    = "wrs6wsp65k764hnaouax5t66vfqrbrst._domainkey.notification.canada.ca"
