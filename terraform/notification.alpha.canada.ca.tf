@@ -1,7 +1,3 @@
-locals {
-    notification_alb = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
-}
-
 resource "aws_route53_record" "notification-alpha-canada-ca-A" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "notification.alpha.canada.ca"
