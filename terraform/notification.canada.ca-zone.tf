@@ -11,6 +11,50 @@ output "notification-canada-ca-ns" {
   value= "${aws_route53_zone.notification-canada-ca-public.name_servers}"
 }
 
+locals {
+    notification_alb = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
+}
+
+resource "aws_route53_record" "notification-canada-ca-A" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "api-notification-canada-ca-A" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "api.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "document-notification-canada-ca-A" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "document.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
+}
+
+resource "aws_route53_record" "api-document-notification-canada-ca-A" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "api.document.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
+}
+
 resource "aws_route53_record" "notification-canada-ca-ACM-cname" {
     zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
     name    = "_2115a5004ab7895234c60254e152046b.notification.canada.ca"

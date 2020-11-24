@@ -1,3 +1,7 @@
+locals {
+    notification_alb = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
+}
+
 resource "aws_route53_record" "notification-alpha-canada-ca-A" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "notification.alpha.canada.ca"
@@ -10,8 +14,8 @@ resource "aws_route53_record" "notification-alpha-canada-ca-A" {
     }
 
     alias {
-        name                   = "dualstack.notify-alb-235715269.us-east-1.elb.amazonaws.com."
-        zone_id                = "Z35SXDOTRQ7X7K"
+        name                   = local.notification_alb
+        zone_id                = "ZQSVJUPU6J1EY"
         evaluate_target_health = true
     }
 }
@@ -39,7 +43,7 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
     name    = "api.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+        local.notification_alb
     ]
     ttl     = "300"
 
@@ -50,7 +54,7 @@ resource "aws_route53_record" "document-notification-alpha-canada-ca-A" {
     name    = "document.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+        local.notification_alb
     ]
     ttl     = "300"
 
@@ -61,7 +65,7 @@ resource "aws_route53_record" "api-document-notification-alpha-canada-ca-A" {
     name    = "api.document.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+        local.notification_alb
     ]
     ttl     = "300"
 
