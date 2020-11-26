@@ -1,37 +1,12 @@
-resource "aws_route53_record" "notification-alpha-canada-ca-A" {
+resource "aws_route53_record" "notification-alpha-canada-ca-CNAME" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "notification.alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
 
-    set_identifier = "notification.alpha.canada.ca-Primary"
-
-    failover_routing_policy {
-        type = "PRIMARY"
-    }
-
-    alias {
-        name                   = local.notification_alb
-        zone_id                = "ZQSVJUPU6J1EY"
-        evaluate_target_health = true
-    }
-}
-
-resource "aws_route53_record" "notification-alpha-canada-ca-A-failover" {
-    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-    name    = "notification.alpha.canada.ca"
-    type    = "A"
-
-    set_identifier = "notification.alpha.canada.ca-Secondary"
-
-    failover_routing_policy {
-        type = "SECONDARY"
-    }
-
-    alias {
-        name                   = "s3-website.ca-central-1.amazonaws.com"
-        zone_id                = "Z1QDHH18159H29"
-        evaluate_target_health = false
-    }
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
 }
 
 resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
