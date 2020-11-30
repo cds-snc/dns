@@ -13,15 +13,19 @@ output "notification-canada-ca-ns" {
 
 locals {
     notification_alb = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
+    notification_zone_id = "ZQSVJUPU6J1EY"
 }
 
 resource "aws_route53_record" "notification-canada-ca-ALIAS" {
     zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
     name    = "notification.canada.ca"
-    type    = "ALIAS"
-    records = [
-        local.notification_alb
-    ]
+    type    = "A"
+
+    alias {
+        name                   = local.notification_alb
+        zone_id                = local.notification_zone_id
+        evaluate_target_health = true
+    }
     ttl     = "300"
 }
 

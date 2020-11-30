@@ -1,11 +1,13 @@
 resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "notification.alpha.canada.ca"
-    type    = "ALIAS"
+    type    = "A"
 
-    records = [
-        local.notification_alb
-    ]
+    alias {
+        name                   = local.notification_alb
+        zone_id                = local.notification_zone_id
+        evaluate_target_health = true
+    }
     ttl     = "300"
 }
 
