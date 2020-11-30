@@ -26,7 +26,6 @@ resource "aws_route53_record" "notification-canada-ca-ALIAS" {
         zone_id                = local.notification_zone_id
         evaluate_target_health = true
     }
-    ttl     = "300"
 }
 
 resource "aws_route53_record" "api-notification-canada-ca-A" {
