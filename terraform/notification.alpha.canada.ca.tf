@@ -1,7 +1,7 @@
-resource "aws_route53_record" "notification-alpha-canada-ca-CNAME" {
+resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "notification.alpha.canada.ca"
-    type    = "CNAME"
+    type    = "ALIAS"
 
     records = [
         local.notification_alb
