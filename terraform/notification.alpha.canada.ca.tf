@@ -1,37 +1,12 @@
-resource "aws_route53_record" "notification-alpha-canada-ca-A" {
+resource "aws_route53_record" "notification-alpha-canada-ca-CNAME" {
     zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
     name    = "notification.alpha.canada.ca"
-    type    = "A"
+    type    = "CNAME"
 
-    set_identifier = "notification.alpha.canada.ca-Primary"
-
-    failover_routing_policy {
-        type = "PRIMARY"
-    }
-
-    alias {
-        name                   = "dualstack.notify-alb-235715269.us-east-1.elb.amazonaws.com."
-        zone_id                = "Z35SXDOTRQ7X7K"
-        evaluate_target_health = true
-    }
-}
-
-resource "aws_route53_record" "notification-alpha-canada-ca-A-failover" {
-    zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-    name    = "notification.alpha.canada.ca"
-    type    = "A"
-
-    set_identifier = "notification.alpha.canada.ca-Secondary"
-
-    failover_routing_policy {
-        type = "SECONDARY"
-    }
-
-    alias {
-        name                   = "s3-website.ca-central-1.amazonaws.com"
-        zone_id                = "Z1QDHH18159H29"
-        evaluate_target_health = false
-    }
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
 }
 
 resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
@@ -39,7 +14,7 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
     name    = "api.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+        local.notification_alb
     ]
     ttl     = "300"
 
@@ -50,7 +25,7 @@ resource "aws_route53_record" "document-notification-alpha-canada-ca-A" {
     name    = "document.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+        local.notification_alb
     ]
     ttl     = "300"
 
@@ -61,7 +36,7 @@ resource "aws_route53_record" "api-document-notification-alpha-canada-ca-A" {
     name    = "api.document.notification.alpha.canada.ca"
     type    = "CNAME"
     records = [
-        "notify-alb-235715269.us-east-1.elb.amazonaws.com"
+        local.notification_alb
     ]
     ttl     = "300"
 
