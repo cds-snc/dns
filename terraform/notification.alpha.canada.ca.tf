@@ -115,7 +115,7 @@ resource "aws_route53_record" "notification-alpha-canada-ca-SPF" {
     name    = "notification.alpha.canada.ca"
     type    = "TXT"
     records = [
-        "v=spf1 include:amazonses.com ~all"
+        "v=spf1 include:amazonses.com -all"
     ]
     ttl     = "300"
 
