@@ -133,7 +133,7 @@ resource "aws_route53_record" "notification-canada-ca-SPF" {
     name    = "notification.canada.ca"
     type    = "TXT"
     records = [
-        "v=spf1 include:amazonses.com ~all"
+        "v=spf1 include:amazonses.com -all"
     ]
     ttl     = "300"
 }
@@ -163,7 +163,7 @@ resource "aws_route53_record" "amazonses-mail-from-notification-canada-ca-TXT" {
     name    = "bounce.notification.canada.ca"
     type    = "TXT"
     records = [
-        "v=spf1 include:amazonses.com ~all"
+        "v=spf1 include:amazonses.com -all"
     ]
     ttl     = "300"
 }
