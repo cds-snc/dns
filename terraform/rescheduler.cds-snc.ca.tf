@@ -53,3 +53,14 @@ resource "aws_route53_record" "_9ad5e390e0591a7c0fee72f5280dc709-rescheduler-cds
     ttl     = "300"
 
 }
+
+resource "aws_route53_record" "_1e29e5064d202307d185782ac5c428ab-rescheduler-cds-snc-ca-CNAME" {
+    zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+    name    = "_1e29e5064d202307d185782ac5c428ab.rescheduler.cds-snc.ca."
+    type    = "CNAME"
+    records = [
+        "_b59d6e58723675a01fe65e054dee675c.wggjkglgrm.acm-validations.aws."
+    ]
+    ttl     = "300"
+
+}
