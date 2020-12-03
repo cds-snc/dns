@@ -3,7 +3,7 @@ resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
     name    = "rescheduler.cds-snc.ca"
     type    = "A"
     alias {
-        name                   = "d20obzj4l8o79t.cloudfront.net"
+        name                   = "d2q7bfe7f2hrcj.cloudfront.net"
         zone_id                = "Z2FDTNDATAQYW2"
         evaluate_target_health = true
     }
@@ -14,7 +14,7 @@ resource "aws_route53_record" "wildcard-rescheduler-cds-snc-ca-CNAME" {
     name    = "*.rescheduler.cds-snc.ca"
     type    = "A"
     alias {
-        name                   = "d20obzj4l8o79t.cloudfront.net"
+        name                   = "d2q7bfe7f2hrcj.cloudfront.net"
         zone_id                = "Z2FDTNDATAQYW2"
         evaluate_target_health = true
     }
