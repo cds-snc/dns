@@ -188,6 +188,5 @@ resource "aws_route53_record" "smtp-notification-canada-ca-NS" {
         "ns-1879.awsdns-42.co.uk",
         "ns-606.awsdns-11.net"
     ]
-    ttl     = "30"
-
+    ttl     = "300"
 }
