@@ -16,7 +16,7 @@ resource "aws_route53_record" "alpha-canada-ca-alias" {
     name    = "alpha.canada.ca"
     type    = "A"
     alias {
-        name                   = "d2aopswi6c2sr6.cloudfront.net"
+        name                   = "d188wm8umhgzev.cloudfront.net"
         zone_id                = "Z2FDTNDATAQYW2"
         evaluate_target_health = true
     }
