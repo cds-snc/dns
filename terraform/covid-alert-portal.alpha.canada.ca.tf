@@ -3,10 +3,10 @@ resource "aws_route53_record" "covid-alert-portal-alpha-canada-ca-NS" {
   name    = "covid-alert-portal.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns-1714.awsdns-22.co.uk",
-    "ns-93.awsdns-11.com",
-    "ns-1334.awsdns-38.org",
-    "ns-842.awsdns-41.net"
+    "ns-905.awsdns-49.net",
+    "ns-29.awsdns-03.com",
+    "ns-2045.awsdns-63.co.uk",
+    "ns-1156.awsdns-16.org"
   ]
   ttl = "300"
 }
