@@ -19,4 +19,4 @@ resource "aws_route53_record" "portail-alerte-covid-alpha-canada-ca-CNAME" {
     "covid-alert-portal.alpha.canada.ca"
   ]
   ttl = "300"
-}
+} 
