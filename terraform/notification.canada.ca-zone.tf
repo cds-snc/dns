@@ -58,6 +58,16 @@ resource "aws_route53_record" "api-document-notification-canada-ca-A" {
     ttl     = "300"
 }
 
+resource "aws_route53_record" "www-notification-canada-ca-CNAME" {
+    zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+    name    = "www.notification.canada.ca"
+    type    = "CNAME"
+    records = [
+        local.notification_alb
+    ]
+    ttl     = "300"
+}
+
 resource "aws_route53_record" "notification-canada-ca-ACM-cname" {
     zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
     name    = "_2115a5004ab7895234c60254e152046b.notification.canada.ca"
