@@ -8,5 +8,5 @@ resource "aws_route53_zone" "beta-canada-ca-public" {
 }
 
 output "beta-canada-ca-ns" {
-  value="${aws_route53_zone.beta-canada-ca-public.name_servers}"
+  value = aws_route53_zone.beta-canada-ca-public.name_servers
 }

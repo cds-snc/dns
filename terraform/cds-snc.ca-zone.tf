@@ -8,5 +8,5 @@ resource "aws_route53_zone" "cds-snc-ca-public" {
 }
 
 output "cds-snc-ca-ns" {
-  value="${aws_route53_zone.cds-snc-ca-public.name_servers}"
+  value = aws_route53_zone.cds-snc-ca-public.name_servers
 }

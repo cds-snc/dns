@@ -8,7 +8,7 @@ resource "aws_route53_zone" "alpha-canada-ca-public" {
 }
 
 output "alpha-canada-ca-ns" {
-  value="${aws_route53_zone.alpha-canada-ca-public.name_servers}"
+  value = aws_route53_zone.alpha-canada-ca-public.name_servers
 }
 
 resource "aws_route53_record" "alpha-canada-ca-alias" {

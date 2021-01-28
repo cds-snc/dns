@@ -8,7 +8,7 @@ resource "aws_route53_zone" "platform-canada-ca-public" {
 }
 
 output "platform-canada-ca-ns" {
-  value="${aws_route53_zone.platform-canada-ca-public.name_servers}"
+  value = aws_route53_zone.platform-canada-ca-public.name_servers
 }
 
 resource "aws_route53_zone" "plateforme-canada-ca-public" {
@@ -21,5 +21,5 @@ resource "aws_route53_zone" "plateforme-canada-ca-public" {
 }
 
 output "plateforme-canada-ca-ns" {
-  value="${aws_route53_zone.plateforme-canada-ca-public.name_servers}"
+  value = aws_route53_zone.plateforme-canada-ca-public.name_servers
 }

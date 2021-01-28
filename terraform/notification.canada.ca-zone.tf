@@ -8,7 +8,7 @@ resource "aws_route53_zone" "notification-canada-ca-public" {
 }
 
 output "notification-canada-ca-ns" {
-  value= "${aws_route53_zone.notification-canada-ca-public.name_servers}"
+  value = aws_route53_zone.notification-canada-ca-public.name_servers
 }
 
 locals {
