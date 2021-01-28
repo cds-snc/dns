@@ -1,10 +1,10 @@
 resource "aws_route53_zone" "platform-canada-ca-public" {
-    name       = "platform.canada.ca"
-    comment    = ""
+  name    = "platform.canada.ca"
+  comment = ""
 
-    tags = {
-        Project = "dns"
-    }
+  tags = {
+    Project = "dns"
+  }
 }
 
 output "platform-canada-ca-ns" {
@@ -12,12 +12,12 @@ output "platform-canada-ca-ns" {
 }
 
 resource "aws_route53_zone" "plateforme-canada-ca-public" {
-    name       = "plateforme.canada.ca"
-    comment    = ""
+  name    = "plateforme.canada.ca"
+  comment = ""
 
-    tags = {
-        Project = "dns"
-    }
+  tags = {
+    Project = "dns"
+  }
 }
 
 output "plateforme-canada-ca-ns" {
