@@ -19,6 +19,6 @@ resource "aws_route53_record" "notification-alpha-cds-snc-ca-A" {
   records = [
     "35.203.112.92"
   ]
-  ttl     = "300"
-   
+  ttl = "300"
+
 }

@@ -5,5 +5,5 @@ resource "aws_route53_record" "web-templates-pspc-alpha-canada-ca-A" {
   records = [
     "52.237.15.42"
   ]
-  ttl     = "300"
+  ttl = "300"
 }

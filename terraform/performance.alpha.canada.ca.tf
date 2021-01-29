@@ -5,7 +5,7 @@ resource "aws_route53_record" "performance-alpha-canada-ca-A" {
   records = [
     "52.237.15.42"
   ]
-  ttl     = "300"
+  ttl = "300"
 }
 
 resource "aws_route53_record" "rendement-alpha-canada-ca-A" {
@@ -15,5 +15,5 @@ resource "aws_route53_record" "rendement-alpha-canada-ca-A" {
   records = [
     "52.237.15.42"
   ]
-  ttl     = "300"
+  ttl = "300"
 }

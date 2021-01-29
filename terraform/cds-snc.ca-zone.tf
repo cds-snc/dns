@@ -1,12 +1,12 @@
 resource "aws_route53_zone" "cds-snc-ca-public" {
-    name       = "cds-snc.ca"
-    comment    = ""
+  name    = "cds-snc.ca"
+  comment = ""
 
-    tags = {
-        Project = "dns"
-    }
+  tags = {
+    Project = "dns"
+  }
 }
 
 output "cds-snc-ca-ns" {
-  value="${aws_route53_zone.cds-snc-ca-public.name_servers}"
+  value = aws_route53_zone.cds-snc-ca-public.name_servers
 }

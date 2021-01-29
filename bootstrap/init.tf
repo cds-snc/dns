@@ -1,5 +1,14 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 2.70"
+    }
+  }
+}
+
 provider "aws" {
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
 
@@ -18,7 +27,7 @@ resource "aws_iam_user" "deployer" {
 
 resource "aws_iam_user_policy" "circleci_deployer_policy" {
   name = "route53-deployment"
-  user = "${aws_iam_user.deployer.name}"
+  user = aws_iam_user.deployer.name
 
   policy = <<EOF
 {
