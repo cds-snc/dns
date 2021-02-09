@@ -183,7 +183,10 @@ resource "aws_route53_record" "amazonses-notification-canada-ca-TXT" {
   name    = "_amazonses.notification.canada.ca"
   type    = "TXT"
   records = [
-    "Ohfl/Syh3ZT5U/7IKELTCXIRaqI42ZJiw0HiUQoCHww="
+    # ca-central-1
+    "Ohfl/Syh3ZT5U/7IKELTCXIRaqI42ZJiw0HiUQoCHww=",
+    # us-east-1 for inbound emails
+    "FHX+PBM3ip2HfDeSXs3WpEuQZydluvX9VpOdBKj0dgU="
   ]
   ttl = "300"
 }
@@ -204,6 +207,16 @@ resource "aws_route53_record" "amazonses-mail-from-notification-canada-ca-MX" {
   type    = "MX"
   records = [
     "10 feedback-smtp.ca-central-1.amazonses.com"
+  ]
+  ttl = "300"
+}
+
+resource "aws_route53_record" "amazonses-inbound-notification-canada-ca-MX" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "notification.canada.ca"
+  type    = "MX"
+  records = [
+    "10 inbound-smtp.us-east-1.amazonaws.com"
   ]
   ttl = "300"
 }
