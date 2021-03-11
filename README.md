@@ -4,8 +4,6 @@
 
 With thanks to our friends at [18f](https://github.com/18F) for the [inspiration](https://github.com/18F/dns), this repository is a collection of Terraform scripts for configuring DNS for domains managed by CDS.
 
-~~Currently this is limited to managing subdomains of *.cds-snc.ca.  In future, we will expand to include the cdssandbox.xyz domain.~~
-
 Currently, we are managing:
 
 - _*.cds-snc.ca_
