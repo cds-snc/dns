@@ -81,7 +81,7 @@ Nous cherchons à faciliter les choses, mais si quelqu'un veut nous aider, veuil
 
 Sous-domaine avec un enregistrement CNAME dirigeant le trafic vers un point de terminaison Cloudfront :
 
-```json
+```hcl
 resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "rescheduler.cds-snc.ca"
