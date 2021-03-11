@@ -74,7 +74,7 @@ Pour demander un nouveau sous-domaine, créez une entrée Terraform `aws_route53
 Un membre de l'équipe de la plate-forme examinera la demande et l'approuvera ou reviendra avec des questions supplémentaires.
 ### Exemples
 
-Sous-domaine avec un enregistrement CNAME dirigeant le trafic vers un point de terminaison Cloudfront :
+Sous-domaine avec un enregistrement `CNAME` dirigeant le trafic vers un point de terminaison CloudFront :
 
 ```hcl
 resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
