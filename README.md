@@ -89,7 +89,7 @@ resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
 }
 ```
 
-Sous-domaine avec un enregistrement A dirigeant le trafic vers une adresse IP :
+Sous-domaine avec un enregistrement `A` dirigeant le trafic vers une adresse IP :
 
 ```hcl
 resource "aws_route53_record" "ebrief-cds-snc-ca-A" {
