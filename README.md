@@ -70,7 +70,7 @@ Pour le moment, nous gérons les domaines:
 
 Vous voulez une jolie URL comme `notification.alpha.canada.ca` pour votre nouveau projet ?  C'est comme ça qu'il faut faire.
 
-### Faire des requêtes DNS
+### Ajouter des enregistrements DNS
 
 Pour demander un nouveau sous-domaine, créez une entrée Terraform `aws_route53_record` et soumettez un [enjeu (issue)](https://github.com/cds-snc/dns/issues/new).
 Un membre de l'équipe de la plate-forme examinera la demande et l'approuvera ou reviendra avec des questions supplémentaires.
