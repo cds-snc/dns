@@ -41,7 +41,7 @@ resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
 
 Subdomain with an A record directing traffic to an IP address:
 
-```json
+```hcl
 resource "aws_route53_record" "ebrief-cds-snc-ca-A" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "ebrief.cds-snc.ca"
