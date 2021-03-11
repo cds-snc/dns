@@ -26,7 +26,7 @@ We are investigating how to make this easier, but if anyone wants to help out, p
 
 Subdomain with a CNAME record directing traffic to a Cloudfront endpoint:
 
-```json
+```hcl
 resource "aws_route53_record" "rescheduler-cds-snc-ca-CNAME" {
     zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
     name    = "rescheduler.cds-snc.ca"
