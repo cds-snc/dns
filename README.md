@@ -56,7 +56,7 @@ resource "aws_route53_record" "ebrief-cds-snc-ca-A" {
 
 ## SNC DNS en tant que service
 
-Avec nos remerciements à nos amis de [18f](https://github.com/18F) pour l'[inspiration](https://github.com/18F/dns), ce dépôt est une collection de scripts Terraform pour la configuration des DNS pour les domaines gérés par SNC.
+Avec nos remerciements à nos amis de [18f](https://github.com/18F) pour l'[inspiration](https://github.com/18F/dns), ce dépôt est une collection de scripts Terraform pour la configuration des DNS pour les domaines gérés par le SNC.
 
 Pour le moment, nous gérons les domaines:
 
