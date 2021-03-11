@@ -60,7 +60,6 @@ resource "aws_route53_record" "ebrief-cds-snc-ca-A" {
 
 Avec nos remerciements à nos amis de [18f](https://github.com/18F) pour l'[inspiration](https://github.com/18F/dns), ce dépôt est une collection de scripts Terraform pour la configuration des DNS pour les domaines gérés par SNC.
 
-~~Actuellement, il se limite à la gestion des sous-domaines de *.cds-snc.ca.  À l'avenir, nous étendrons cette liste pour inclure le domaine cdssandbox.xyz.~~
 Pour le moment, nous gérons les domaines:
 
 - _*.cds-snc.ca_
