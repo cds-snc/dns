@@ -74,9 +74,6 @@ Vous voulez une jolie URL comme `notification.alpha.canada.ca` pour votre nouvea
 
 Pour demander un nouveau sous-domaine, créez une entrée de terraforme `aws_route53_record` et soumettez un [enjeu (issue)](https://github.com/cds-snc/dns/issues/new) ~~pull request~~.
 Un membre de l'équipe de la plate-forme examinera la demande et l'approuvera ou reviendra avec des questions supplémentaires.
-
-Nous cherchons à faciliter les choses, mais si quelqu'un veut nous aider, veuillez contacter john.obrien@cds-snc.ca
-
 ### Exemples
 
 Sous-domaine avec un enregistrement CNAME dirigeant le trafic vers un point de terminaison Cloudfront :
