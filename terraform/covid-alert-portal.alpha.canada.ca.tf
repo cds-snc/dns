@@ -21,7 +21,7 @@ resource "aws_route53_record" "portail-alerte-covid-alpha-canada-ca-CNAME" {
   ttl = "300"
 }
 
-resource "aws_route53_record" "covid-alert-portal-alpha-canada-ca-NS" {
+resource "aws_route53_record" "covid-alert-qr-poster-alpha-canada-ca-NS" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "covid-alert-qr-poster.alpha.canada.ca"
   type    = "NS"
@@ -34,7 +34,7 @@ resource "aws_route53_record" "covid-alert-portal-alpha-canada-ca-NS" {
   ttl = "300"
 }
 
-resource "aws_route53_record" "portail-alerte-covid-alpha-canada-ca-CNAME" {
+resource "aws_route53_record" "alerte-covid-affiche-qr-alpha-canada-ca-CNAME" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "alerte-covid-affiche-qr.alpha.canada.ca"
   type    = "CNAME"
