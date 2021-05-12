@@ -42,4 +42,14 @@ resource "aws_route53_record" "alerte-covid-affiche-qr-alpha-canada-ca-CNAME" {
     "covid-alert-qr-poster.alpha.canada.ca"
   ]
   ttl = "300"
+}
+
+resource "aws_route53_record" "alerte-covid-affiche-qr-alpha-canada-ca-verification-CNAME" {
+  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name    = "_e0ddcd305a28712f16fb43976ceb9b69.alerte-covid-affiche-qr.alpha.canada.ca."
+  type    = "CNAME"
+  records = [
+    "_e257e25ee755e4983d6b4a961d9a5f3d.zzxlnyslwt.acm-validations.aws."
+  ]
+  ttl = "300"
 } 
