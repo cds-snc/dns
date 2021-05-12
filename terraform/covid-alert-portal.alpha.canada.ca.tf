@@ -26,10 +26,10 @@ resource "aws_route53_record" "covid-alert-qr-poster-alpha-canada-ca-NS" {
   name    = "covid-alert-qr-poster.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns-905.awsdns-49.net",
-    "ns-29.awsdns-03.com",
-    "ns-2045.awsdns-63.co.uk",
-    "ns-1156.awsdns-16.org"
+    "ns-385.awsdns-48.com",
+    "ns-1866.awsdns-41.co.uk",
+    "ns-1226.awsdns-25.org",
+    "ns-808.awsdns-37.net"
   ]
   ttl = "300"
 }
