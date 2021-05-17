@@ -23,7 +23,7 @@ resource "aws_route53_record" "energy-information-alpha-canada-ca-CNAME" {
   name    = "energy-information.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "www-alpha.prod.cloud.statcan.ca"
+    "ccei-alpha.prod.cloud.statcan.ca"
   ]
   ttl = "300"
 }
@@ -33,7 +33,7 @@ resource "aws_route53_record" "information-energie-alpha-canada-ca-CNAME" {
   name    = "information-energie.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "www-alpha.prod.cloud.statcan.ca"
+    "ccei-alpha.prod.cloud.statcan.ca"
   ]
   ttl = "300"
 }
