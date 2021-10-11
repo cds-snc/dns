@@ -26,7 +26,7 @@ resource "aws_route53_record" "workplace-alpha-canada-ca-CNAME" {
   name    = "workplace.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "gcr2wp-dev@powerappsportals.com"
+    "gcr2wp-dev.powerappsportals.com"
   ]
   ttl = "300"
 
@@ -37,7 +37,7 @@ resource "aws_route53_record" "milieu-travail-alpha-canada-ca-CNAME" {
   name    = "milieu-travail.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "gcr2wp-dev@powerappsportals.com"
+    "gcr2wp-dev.powerappsportals.com"
   ]
   ttl = "300"
 
