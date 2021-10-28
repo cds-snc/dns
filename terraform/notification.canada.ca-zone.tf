@@ -38,6 +38,16 @@ resource "aws_route53_record" "api-notification-canada-ca-A" {
   ttl = "300"
 }
 
+resource "aws_route53_record" "api-lambda-notification-canada-ca-A" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "api-lambda.notification.canada.ca"
+  type    = "CNAME"
+  records = [
+    local.notification_alb
+  ]
+  ttl = "300"
+}
+
 resource "aws_route53_record" "document-notification-canada-ca-A" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "document.notification.canada.ca"
