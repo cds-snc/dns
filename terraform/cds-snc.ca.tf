@@ -184,7 +184,8 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
   type    = "TXT"
   records = [
     "MS=ms61032497",
-    "v=spf1 include:_spf.google.com include:email.freshdesk.com ~all"
+    "v=spf1 include:_spf.google.com include:email.freshdesk.com ~all",
+    "apple-domain-verification=4YW6F7vBgCWOVoTh"
   ]
   ttl = "3600"
 
@@ -268,5 +269,3 @@ resource "aws_route53_record" "status-cds-snc-CNAME" {
     "domains.statuspal.io"
   ]
   ttl = "1800"
-
-}
