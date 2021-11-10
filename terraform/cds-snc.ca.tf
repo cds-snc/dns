@@ -269,3 +269,4 @@ resource "aws_route53_record" "status-cds-snc-CNAME" {
     "domains.statuspal.io"
   ]
   ttl = "1800"
+}
