@@ -52,7 +52,7 @@ resource "aws_route53_record" "alerte-covid-affiche-qr-alpha-canada-ca-verificat
     "_e257e25ee755e4983d6b4a961d9a5f3d.zzxlnyslwt.acm-validations.aws."
   ]
   ttl = "300"
-} 
+}
 
 resource "aws_route53_record" "portail-alerte-covid-alpha-canada-ca-verification-CNAME" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
