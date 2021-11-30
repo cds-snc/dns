@@ -29,14 +29,24 @@ resource "aws_route53_record" "notification-canada-ca-ALIAS" {
   }
 }
 
-resource "aws_route53_record" "api-notification-canada-ca-A" {
+resource "aws_route53_record" "api-notification-canada-ca-A-k8s" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "api.notification.canada.ca"
   type    = "CNAME"
-  records = [
-    local.notification_alb
-  ]
-  ttl = "300"
+  records = [local.notification_alb]
+  weighted_routing_policy {
+    weight = 100
+  }
+}
+
+resource "aws_route53_record" "api-notification-canada-ca-A-lambda" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "api.notification.canada.ca"
+  type    = "CNAME"
+  records = [local.api_lambda_app_gateway]
+  weighted_routing_policy {
+    weight = 0
+  }
 }
 
 resource "aws_route53_record" "api-lambda-notification-canada-ca-A" {
