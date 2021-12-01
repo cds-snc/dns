@@ -34,6 +34,7 @@ resource "aws_route53_record" "api-notification-canada-ca-A-k8s" {
   name    = "api.notification.canada.ca"
   type    = "CNAME"
   records = [local.notification_alb]
+  ttl     = "300"
   weighted_routing_policy {
     weight = 100
   }
@@ -44,6 +45,7 @@ resource "aws_route53_record" "api-notification-canada-ca-A-lambda" {
   name    = "api.notification.canada.ca"
   type    = "CNAME"
   records = [local.api_lambda_app_gateway]
+  ttl     = "300"
   weighted_routing_policy {
     weight = 0
   }
