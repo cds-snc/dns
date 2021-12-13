@@ -17,3 +17,14 @@ resource "aws_route53_record" "suivi-alpha-canada-ca-A" {
   ]
   ttl = "300"
 }
+
+resource "aws_route53_record" "log4shell-tracker-alpha-canada-ca-A" {
+  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name    = "log4shell.tracker.alpha.canada.ca"
+  type    = "A"
+  records = [
+    "34.95.5.243"
+  ]
+  ttl = "300"
+}
+
