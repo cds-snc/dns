@@ -33,7 +33,7 @@ resource "aws_route53_record" "ns1-log4shell-tracker-alpha-canada-ca-A" {
   name    = "ns1-log4shell.tracker.alpha.canada.ca"
   type    = "A"
   records = [
-    "34.95.5.243"
+    "34.95.53.80"
   ]
   ttl = "300"
 }
