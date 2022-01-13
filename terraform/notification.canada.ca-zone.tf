@@ -12,9 +12,10 @@ output "notification-canada-ca-ns" {
 }
 
 locals {
-  notification_alb       = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
-  notification_zone_id   = "ZQSVJUPU6J1EY"
-  api_lambda_app_gateway = "d-3hv37fqgbg.execute-api.ca-central-1.amazonaws.com"
+  notification_alb                          = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
+  notification_zone_id                      = "ZQSVJUPU6J1EY"
+  api_lambda_gateway_domain_name_api_lambda = "d-0jho4qbdqi.execute-api.ca-central-1.amazonaws.com"
+  api_lambda_gateway_domain_name_api        = "d-jwtzdgd9qg.execute-api.ca-central-1.amazonaws.com"
 }
 
 resource "aws_route53_record" "notification-canada-ca-ALIAS" {
@@ -54,7 +55,7 @@ resource "aws_route53_record" "api-lambda-notification-canada-ca-A" {
   name    = "api-lambda.notification.canada.ca"
   type    = "CNAME"
   records = [
-    local.api_lambda_app_gateway
+    local.api_lambda_gateway_domain_name_api_lambda
   ]
   ttl = "300"
 }
