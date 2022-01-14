@@ -37,7 +37,11 @@ resource "aws_route53_record" "api-notification-canada-ca-A" {
   records = [
     local.notification_alb
   ]
-  ttl = "300"
+  ttl            = "60"
+  set_identifier = "loadbalancer"
+  weighted_routing_policy {
+    weight = 100
+  }
 }
 
 resource "aws_route53_record" "api-k8s-notification-canada-ca-A" {
