@@ -203,9 +203,10 @@ resource "aws_route53_record" "notification-canada-ca-SPF" {
   name    = "notification.canada.ca"
   type    = "TXT"
   records = [
-    "v=spf1 include:amazonses.com -all",
     # Used for https://postmaster.google.com
-    "google-site-verification=KMFWVel40xicbDXojkXz_1B2gBlPFSqF69cVdH_dfn0"
+    "google-site-verification=KMFWVel40xicbDXojkXz_1B2gBlPFSqF69cVdH_dfn0",
+    "google-site-verification=WNq0Z6naWk2E9SfS9eYq6Y6ZHH29nmkgox3chj5I9iE",
+    "v=spf1 include:amazonses.com -all"
   ]
   ttl = "300"
 }
