@@ -14,6 +14,7 @@ output "notification-canada-ca-ns" {
 locals {
   notification_alb                          = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
   notification_zone_id                      = "ZQSVJUPU6J1EY"
+  api_gateway_regional_zone_id              = "Z19DQILCV0OWEC" # ca-central-1
   api_lambda_gateway_domain_name_api_lambda = "d-0jho4qbdqi.execute-api.ca-central-1.amazonaws.com"
   api_lambda_gateway_domain_name_api        = "d-jwtzdgd9qg.execute-api.ca-central-1.amazonaws.com"
 }
@@ -54,6 +55,7 @@ resource "aws_route53_record" "lambda-api-notification-canada-ca-A" {
 
   alias {
     name                   = local.api_lambda_gateway_domain_name_api
+    zone_id                = local.api_gateway_regional_zone_id
     evaluate_target_health = true
   }
 
