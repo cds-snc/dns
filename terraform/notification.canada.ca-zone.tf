@@ -14,6 +14,7 @@ output "notification-canada-ca-ns" {
 locals {
   notification_alb                          = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
   notification_zone_id                      = "ZQSVJUPU6J1EY"
+  api_gateway_regional_zone_id              = "Z19DQILCV0OWEC" # ca-central-1
   api_lambda_gateway_domain_name_api_lambda = "d-0jho4qbdqi.execute-api.ca-central-1.amazonaws.com"
   api_lambda_gateway_domain_name_api        = "d-jwtzdgd9qg.execute-api.ca-central-1.amazonaws.com"
 }
@@ -33,11 +34,14 @@ resource "aws_route53_record" "notification-canada-ca-ALIAS" {
 resource "aws_route53_record" "api-notification-canada-ca-A" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "api.notification.canada.ca"
-  type    = "CNAME"
-  records = [
-    local.notification_alb
-  ]
-  ttl            = "60"
+  type    = "A"
+
+  alias {
+    name                   = local.notification_alb
+    zone_id                = local.notification_zone_id
+    evaluate_target_health = true
+  }
+
   set_identifier = "loadbalancer"
   weighted_routing_policy {
     weight = 100
@@ -47,11 +51,14 @@ resource "aws_route53_record" "api-notification-canada-ca-A" {
 resource "aws_route53_record" "lambda-api-notification-canada-ca-A" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "api.notification.canada.ca"
-  type    = "CNAME"
-  records = [
-    local.api_lambda_gateway_domain_name_api
-  ]
-  ttl            = "60"
+  type    = "A"
+
+  alias {
+    name                   = local.api_lambda_gateway_domain_name_api
+    zone_id                = local.api_gateway_regional_zone_id
+    evaluate_target_health = true
+  }
+
   set_identifier = "lambda"
   weighted_routing_policy {
     weight = 0
