@@ -78,11 +78,13 @@ resource "aws_route53_record" "api-k8s-notification-canada-ca-A" {
 resource "aws_route53_record" "api-lambda-notification-canada-ca-A" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "api-lambda.notification.canada.ca"
-  type    = "CNAME"
-  records = [
-    local.api_lambda_gateway_domain_name_api_lambda
-  ]
-  ttl = "300"
+  type    = "A"
+
+  alias {
+    name                   = local.api_lambda_gateway_domain_name_api_lambda
+    zone_id                = local.api_gateway_regional_zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "document-notification-canada-ca-A" {
