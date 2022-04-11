@@ -44,7 +44,7 @@ resource "aws_route53_record" "api-notification-canada-ca-A" {
 
   set_identifier = "loadbalancer"
   weighted_routing_policy {
-    weight = 75
+    weight = 50
   }
 }
 
@@ -61,7 +61,7 @@ resource "aws_route53_record" "lambda-api-notification-canada-ca-A" {
 
   set_identifier = "lambda"
   weighted_routing_policy {
-    weight = 25
+    weight = 50
   }
 }
 
