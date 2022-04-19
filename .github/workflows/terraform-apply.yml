@@ -3,7 +3,7 @@ name: "Terraform apply"
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "terraform/**"
 
