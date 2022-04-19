@@ -3,7 +3,7 @@ name: "Terraform plan"
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - "terraform/**"
       - ".github/workflows/terraform-plan.yml"
