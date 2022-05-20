@@ -1,6 +1,6 @@
-resource "aws_route53_record" "ssc-sp-alpha-canada-ca-NS" {
+resource "aws_route53_record" "sp-ssc-alpha-canada-ca-NS" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name    = "ssc-sp.alpha.canada.ca"
+  name    = "sp.ssc.alpha.canada.ca"
   type    = "NS"
   records = [
     "ns1-32.azure-dns.com",
