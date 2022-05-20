@@ -3,10 +3,10 @@ resource "aws_route53_record" "sp-ssc-alpha-canada-ca-NS" {
   name    = "sp.ssc.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns1-32.azure-dns.com",
-    "ns2-32.azure-dns.net",
-    "ns3-32.azure-dns.org",
-    "ns4-32.azure-dns.info"
+    "ns1-35.azure-dns.com",
+    "ns2-35.azure-dns.net",
+    "ns3-35.azure-dns.org",
+    "ns4-35.azure-dns.info"
   ]
   ttl = "300"
 }
