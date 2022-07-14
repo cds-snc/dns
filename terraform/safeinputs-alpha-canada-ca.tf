@@ -1,4 +1,4 @@
-resource "aws_route53_record" "tracker-alpha-canada-ca-NS" {
+resource "aws_route53_record" "safeinputs-alpha-canada-ca-NS" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "safeinputs.alpha.canada.ca"
   type    = "NS"
@@ -11,7 +11,7 @@ resource "aws_route53_record" "tracker-alpha-canada-ca-NS" {
   ttl = "300"
 }
 
-resource "aws_route53_record" "suivi-alpha-canada-ca-NS" {
+resource "aws_route53_record" "entreessecurisees-alpha-canada-ca-NS" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "entreessecurisees.alpha.canada.ca"
   type    = "NS"
