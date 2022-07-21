@@ -157,6 +157,16 @@ resource "aws_route53_record" "document-notification-canada-ca-ACM-cname" {
   ttl = "300"
 }
 
+resource "aws_route53_record" "api-notification-canada-ca-ACM-cname" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "_902cdb1a2cb8214fc698261ee3085b64.api.notification.canada.ca."
+  type    = "CNAME"
+  records = [
+    "_ac309158c158035bfb929da1617e2b16.mqzgcdqkwq.acm-validations.aws."
+  ]
+  ttl = "300"
+}
+
 resource "aws_route53_record" "assets-notification-canada-ca-ACM-cname" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "_4e30c74d7459e0d63bdcdaac7a57fdcf.assets.notification.canada.ca"
