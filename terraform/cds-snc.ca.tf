@@ -266,7 +266,7 @@ resource "aws_route53_record" "status-cds-snc-CNAME" {
   name    = "status-statut.cds-snc.ca"
   type    = "CNAME"
   records = [
-    "domains.statuspal.io"
+    "cds-snc.github.io"
   ]
   ttl = "1800"
 }
