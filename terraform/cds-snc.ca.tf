@@ -311,3 +311,14 @@ resource "aws_route53_record" "status-cds-snc-CNAME" {
   ]
   ttl = "1800"
 }
+
+# internal tech support 
+resource "aws_route53_record" "support-cds-snc-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "support.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "canadiandigitalservice.happyfox.com"
+  ]
+  ttl = "1800"
+}
