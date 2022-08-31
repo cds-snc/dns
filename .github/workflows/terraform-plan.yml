@@ -10,15 +10,13 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   CONFTEST_VERSION: 0.27.0
-  TERRAFORM_VERSION: 0.13.6
+  TERRAFORM_VERSION: 0.14.0
   TF_INPUT: false
 
 jobs:
-
   terraform-plan:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2
 
