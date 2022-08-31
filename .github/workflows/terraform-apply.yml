@@ -12,7 +12,7 @@ env:
   AWS_REGION: ca-central-1
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  TERRAFORM_VERSION: 0.14.0
+  TERRAFORM_VERSION: 1.0.0
   TF_INPUT: false
 
 jobs:
