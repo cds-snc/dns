@@ -3,7 +3,7 @@ resource "aws_route53_record" "performance-alpha-canada-ca-A" {
   name    = "performance.alpha.canada.ca"
   type    = "A"
   records = [
-    "52.237.15.42"
+    "20.220.167.149"
   ]
   ttl = "300"
 }
@@ -13,7 +13,7 @@ resource "aws_route53_record" "rendement-alpha-canada-ca-A" {
   name    = "rendement.alpha.canada.ca"
   type    = "A"
   records = [
-    "52.237.15.42"
+    "20.220.167.149"
   ]
   ttl = "300"
 }
