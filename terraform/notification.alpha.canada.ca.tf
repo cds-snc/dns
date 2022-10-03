@@ -15,7 +15,9 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
   name    = "api.notification.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    local.notification_alb
+    # Targets the Route53 production record to get through proper
+    # weighted redirection strategy (k8 or lambda).
+    "api.notification.canada.ca"
   ]
   ttl = "300"
 
