@@ -1,0 +1,28 @@
+{
+    "name": "dns",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:buster",
+    "features": {
+        "aws-cli": "latest",
+        "terraform": {
+            "version": "1.2.8",
+            "tflint": "none",
+            "terragrunt": "none"
+        }
+    },
+    "containerEnv": {
+        "SHELL": "/bin/zsh"
+    },
+    "settings": {
+        "[terraform]": {
+            "editor.formatOnSave": true
+        }
+    },
+    "extensions": [
+        "hashicorp.terraform",
+        "redhat.vscode-yaml",
+        "sebastianbille.iam-legend",
+        "github.copilot"
+    ],
+    "remoteUser": "vscode",
+    "postCreateCommand": ".devcontainer/post-create-command.sh"
+}
