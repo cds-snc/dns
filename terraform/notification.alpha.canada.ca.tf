@@ -13,12 +13,13 @@ resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
 resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "api.notification.alpha.canada.ca"
-  type    = "CNAME"
-  records = [
-    local.notification_alb
-  ]
-  ttl = "300"
+  type    = "A"
 
+  alias {
+    name                   = local.api_lambda_gateway_domain_name_api
+    zone_id                = local.api_gateway_regional_zone_id
+    evaluate_target_health = true
+  }
 }
 
 resource "aws_route53_record" "document-notification-alpha-canada-ca-A" {
