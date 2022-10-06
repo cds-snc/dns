@@ -16,7 +16,7 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
   type    = "A"
 
   alias {
-    name                   = local.api_lambda_gateway_domain_name_api
+    name                   = local.api_lambda_gateway_domain_name_alt_api_lambda
     zone_id                = local.api_gateway_regional_zone_id
     evaluate_target_health = true
   }
