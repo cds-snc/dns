@@ -1,5 +1,5 @@
 locals {
-  acme_challenge       = "_acme_challenge"
+  acme_challenge       = "_acme-challenge"
   challenges_subdomain = "challenges.cloud.statcan.ca"
 }
 
