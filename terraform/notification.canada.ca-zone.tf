@@ -284,15 +284,3 @@ resource "aws_route53_record" "amazonses-inbound-notification-canada-ca-MX" {
   ttl = "300"
 }
 
-resource "aws_route53_record" "smtp-notification-canada-ca-NS" {
-  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
-  name    = "smtp.notification.canada.ca"
-  type    = "NS"
-  records = [
-    "ns-125.awsdns-15.com",
-    "ns-1193.awsdns-21.org",
-    "ns-1879.awsdns-42.co.uk",
-    "ns-606.awsdns-11.net"
-  ]
-  ttl = "300"
-}
