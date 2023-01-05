@@ -322,3 +322,14 @@ resource "aws_route53_record" "support-cds-snc-CNAME" {
   ]
   ttl = "1800"
 }
+
+# cloud spend page
+resource "aws_route53_record" "cloud-spend-cds-snc-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "cloud-spend.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "cds-snc.github.io"
+  ]
+  ttl = "1800"
+}
