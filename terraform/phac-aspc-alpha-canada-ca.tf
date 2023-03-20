@@ -16,10 +16,10 @@ resource "aws_route53_record" "phac-alpha-canada-ca-NS" {
   name    = "phac.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns-cloud-d1.googledomains.com.",
-    "ns-cloud-d2.googledomains.com.",
-    "ns-cloud-d3.googledomains.com.",
-    "ns-cloud-d4.googledomains.com.",
+    "ns-cloud-e1.googledomains.com.",
+    "ns-cloud-e2.googledomains.com.",
+    "ns-cloud-e3.googledomains.com.",
+    "ns-cloud-e4.googledomains.com.",
   ]
   ttl = "21600"
 }
@@ -29,10 +29,10 @@ resource "aws_route53_record" "aspc-alpha-canada-ca-NS" {
   name    = "aspc.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns-cloud-d1.googledomains.com.",
-    "ns-cloud-d2.googledomains.com.",
-    "ns-cloud-d3.googledomains.com.",
-    "ns-cloud-d4.googledomains.com.",
+    "ns-cloud-e1.googledomains.com.",
+    "ns-cloud-e2.googledomains.com.",
+    "ns-cloud-e3.googledomains.com.",
+    "ns-cloud-e4.googledomains.com.",
   ]
   ttl = "21600"
 }
