@@ -8,7 +8,7 @@ resource "aws_route53_record" "phac-aspc-alpha-canada-ca-NS" {
     "ns-cloud-c3.googledomains.com.",
     "ns-cloud-c4.googledomains.com.",
   ]
-  ttl = "300"
+  ttl = "21600"
 }
 
 resource "aws_route53_record" "phac-alpha-canada-ca-NS" {
@@ -21,7 +21,7 @@ resource "aws_route53_record" "phac-alpha-canada-ca-NS" {
     "ns-cloud-d3.googledomains.com.",
     "ns-cloud-d4.googledomains.com.",
   ]
-  ttl = "300"
+  ttl = "21600"
 }
 
 resource "aws_route53_record" "aspc-alpha-canada-ca-NS" {
@@ -34,5 +34,5 @@ resource "aws_route53_record" "aspc-alpha-canada-ca-NS" {
     "ns-cloud-d3.googledomains.com.",
     "ns-cloud-d4.googledomains.com.",
   ]
-  ttl = "300"
+  ttl = "21600"
 }
