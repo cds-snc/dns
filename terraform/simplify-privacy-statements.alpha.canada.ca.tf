@@ -11,6 +11,20 @@ resource "aws_route53_record" "simplify-privacy-statements-alpha-canada-ca-NS" {
   ttl = "300"
 }
 
+resource "aws_route53_record" "simplification-avis-confidentialite-alpha-canada-ca-NS" {
+  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name    = "simplification-avis-confidentialite.alpha.canada.ca"
+  type    = "NS"
+  records = [
+    "ns-1935.awsdns-49.co.uk",
+    "ns-1133.awsdns-13.org",
+    "ns-941.awsdns-53.net",
+    "ns-414.awsdns-51.com"
+  ]
+  ttl = "300"
+}
+
+
 resource "aws_route53_record" "privacy-statements-cds-alpha-canada-ca-CNAME" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "privacy-statements.cds.alpha.canada.ca"
