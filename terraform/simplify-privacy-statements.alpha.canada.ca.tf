@@ -11,7 +11,7 @@ resource "aws_route53_record" "simplify-privacy-statements-alpha-canada-ca-NS" {
   ttl = "300"
 }
 
-resource "aws_route53_record" "simplification-avis-confidentialite.alpha.canada.ca-NS" {
+resource "aws_route53_record" "simplification-avis-confidentialite-alpha-canada-ca-NS" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "simplification-avis-confidentialite.alpha.canada.ca"
   type    = "NS"
