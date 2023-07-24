@@ -185,7 +185,8 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
   records = [
     "MS=ms61032497",
     "v=spf1 include:_spf.google.com include:email.freshdesk.com ~all",
-    "apple-domain-verification=4YW6F7vBgCWOVoTh"
+    "apple-domain-verification=4YW6F7vBgCWOVoTh",
+    "miro-verification=b613aeb17bf7dfe250cf22d5483c1a352ea0c2f1"
   ]
   ttl = "3600"
 
