@@ -333,3 +333,14 @@ resource "aws_route53_record" "cloud-spend-cds-snc-CNAME" {
   ]
   ttl = "1800"
 }
+
+# miro domain control
+resource "aws_route53_record" "miro-domain-control-TXT" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "cds-snc.ca"
+  type    = "TXT"
+  records = [
+    "miro-verification=b613aeb17bf7dfe250cf22d5483c1a352ea0c2f1"
+  ]
+  ttl = "3600"
+}
