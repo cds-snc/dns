@@ -334,3 +334,14 @@ resource "aws_route53_record" "cloud-spend-cds-snc-CNAME" {
   ]
   ttl = "1800"
 }
+
+
+resource "aws_route53_record" "_github-challenge-cds-snc-org" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "_github-challenge-cds-snc-org"
+  type    = "TXT"
+  records = [
+    "05a2344682"
+  ]
+  ttl = "1800"
+}
