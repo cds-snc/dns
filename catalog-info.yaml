@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dns
+  description: DNS Configuration for domains managed by CDS
+spec:
+  type: website
+  lifecycle: experimental
+  owner: cds-snc
