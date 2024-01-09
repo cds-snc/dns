@@ -293,3 +293,13 @@ resource "aws_route53_record" "status-notification-validation-CNAME" {
 
   ttl = "300"
 }
+
+resource "aws_route53_record" "system-status-notification-canada-ca-cname" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "status.notification.canada.ca"
+  type    = "CNAME"
+  records = [
+    "d2ica3mejnwxm3.cloudfront.net"
+  ]
+  ttl = "300"
+}
