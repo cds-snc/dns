@@ -284,3 +284,12 @@ resource "aws_route53_record" "amazonses-inbound-notification-canada-ca-MX" {
   ttl = "300"
 }
 
+# DNS Validation for status.notification.canada.ca
+resource "aws_route53_record" "status-notification-validation-CNAME" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "_7deec9582fbcae0f970d8192e402d455.status.notification.canada.ca"
+  type    = "CNAME"
+  records = ["_460cff15b0106252f78a3e2257c44d80.mhbtsbpdnt.acm-validations.aws."]
+
+  ttl = "300"
+}
