@@ -290,6 +290,6 @@ resource "aws_route53_record" "status-notification-validation-CNAME" {
   name    = "_7deec9582fbcae0f970d8192e402d455.status.notification.canada.ca"
   type    = "CNAME"
   records = ["_460cff15b0106252f78a3e2257c44d80.mhbtsbpdnt.acm-validations.aws."]
-  
+
   ttl = "300"
 }
