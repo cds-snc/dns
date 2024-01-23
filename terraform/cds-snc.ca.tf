@@ -184,7 +184,7 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
   type    = "TXT"
   records = [
     "MS=ms61032497",
-    "v=spf1 include:_spf.google.com include:email.freshdesk.com ~all",
+    "v=spf1 include:_spf.google.com include:email.freshdesk.com include:spf.happyfox.com ~all",
     "apple-domain-verification=4YW6F7vBgCWOVoTh",
     "miro-verification=b613aeb17bf7dfe250cf22d5483c1a352ea0c2f1"
   ]
@@ -298,6 +298,27 @@ resource "aws_route53_record" "freshdesk-dkim-04-cds-snc-ca-CNAME" {
   type    = "CNAME"
   records = [
     "spfmx1.domainkey.freshemail.io"
+  ]
+  ttl = "1800"
+}
+
+# Happyfox DKIM records
+resource "aws_route53_record" "happyfox-dkim-01-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "happyfox1._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "happyfox1._domainkey.happyfox.com"
+  ]
+  ttl = "1800"
+}
+
+resource "aws_route53_record" "happyfox-dkim-02-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "happyfox2._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "happyfox2._domainkey.happyfox.com"
   ]
   ttl = "1800"
 }
