@@ -24,7 +24,7 @@ jobs:
         uses: cds-snc/terraform-tools-setup@v1
 
       - name: Terraform plan
-        uses: cds-snc/terraform-plan@b84f6e89f3e7b5ecf648a2c036c043c73d82da59 # v3.1.0
+        uses: cds-snc/terraform-plan@5311f3dac704235dde778e30fa7d2bd0c0d8036f # v3.2.0
         with:
           directory: "terraform"
           comment-delete: "true"
