@@ -324,6 +324,15 @@ resource "aws_route53_record" "mailchimp-dkim-03-cds-snc-ca-cname" {
   ttl = "1800"
 }
 
+resource "aws_route53_record" "mailchimp-dmarc-cds-snc-ca-TXT" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name = "_dmarc.cds-snc.ca"
+  type = "TXT"
+  records = [
+    "v=DMARC1, p=none"
+  ]
+}
+
 # Happyfox DKIM records
 resource "aws_route53_record" "happyfox-dkim-01-cds-snc-ca-CNAME" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
