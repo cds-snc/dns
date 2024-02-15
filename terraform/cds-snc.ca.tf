@@ -306,8 +306,8 @@ resource "aws_route53_record" "freshdesk-dkim-04-cds-snc-ca-CNAME" {
 
 resource "aws_route53_record" "mailchimp-dkim-02-cds-snc-ca-cname" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
-  name = "k2._domainkey.cds-snc.ca"
-  type = "CNAME"
+  name    = "k2._domainkey.cds-snc.ca"
+  type    = "CNAME"
   records = [
     "dkim2.mcsv.net"
   ]
@@ -316,8 +316,8 @@ resource "aws_route53_record" "mailchimp-dkim-02-cds-snc-ca-cname" {
 
 resource "aws_route53_record" "mailchimp-dkim-03-cds-snc-ca-cname" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
-  name = "k3._domainkey.cds-snc.ca"
-  type = "CNAME"
+  name    = "k3._domainkey.cds-snc.ca"
+  type    = "CNAME"
   records = [
     "dkim3.mcsv.net"
   ]
@@ -326,8 +326,8 @@ resource "aws_route53_record" "mailchimp-dkim-03-cds-snc-ca-cname" {
 
 resource "aws_route53_record" "mailchimp-dmarc-cds-snc-ca-TXT" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
-  name = "_dmarc.cds-snc.ca"
-  type = "TXT"
+  name    = "_dmarc.cds-snc.ca"
+  type    = "TXT"
   records = [
     "v=DMARC1, p=none"
   ]
