@@ -302,6 +302,28 @@ resource "aws_route53_record" "freshdesk-dkim-04-cds-snc-ca-CNAME" {
   ttl = "1800"
 }
 
+# Mailchimp records
+
+resource "aws_route53_record" "mailchimp-dkim-02-cds-snc-ca-cname" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name = "k2._domainkey.cds-snc.ca"
+  type = "CNAME"
+  records = [
+    "dkim2.mcsv.net"
+  ]
+  ttl = "1800"
+}
+
+resource "aws_route53_record" "mailchimp-dkim-03-cds-snc-ca-cname" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name = "k3._domainkey.cds-snc.ca"
+  type = "CNAME"
+  records = [
+    "dkim3.mcsv.net"
+  ]
+  ttl = "1800"
+}
+
 # Happyfox DKIM records
 resource "aws_route53_record" "happyfox-dkim-01-cds-snc-ca-CNAME" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
