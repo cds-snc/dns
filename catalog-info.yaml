@@ -4,6 +4,8 @@ metadata:
   name: dns
   description: DNS Configuration for domains managed by CDS
 spec:
-  type: website
+  type: service
   lifecycle: experimental
-  owner: cds-snc
+  owner: group:cds-snc/internal-sre
+  domain: site-reliability-engineering
+  system: cds-alm
