@@ -8,4 +8,4 @@ spec:
   lifecycle: experimental
   owner: group:cds-snc/internal-sre
   domain: site-reliability-engineering
-  system: cds-alm
+  system: cds-aws-landing-zone
