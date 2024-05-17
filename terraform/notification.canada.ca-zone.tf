@@ -218,6 +218,36 @@ resource "aws_route53_record" "dkim3-notification-canada-ca-CNAME" {
   ttl = "300"
 }
 
+resource "aws_route53_record" "dkim1-notification-canada-ca-us-east-1-CNAME" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "iymb7ahbsrpfy7ktku4tpibh2n3a2hdk._domainkey.notification.canada.ca"
+  type    = "CNAME"
+  records = [
+    "iymb7ahbsrpfy7ktku4tpibh2n3a2hdk.dkim.amazonses.com"
+  ]
+  ttl = "300"
+}
+
+resource "aws_route53_record" "dkim2-notification-canada-ca-us-east-1-CNAME" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "z7ujljo4n4hbl4slxawnomvstjhlbgx2._domainkey.notification.canada.ca"
+  type    = "CNAME"
+  records = [
+    "z7ujljo4n4hbl4slxawnomvstjhlbgx2.dkim.amazonses.com"
+  ]
+  ttl = "300"
+}
+
+resource "aws_route53_record" "dkim3-notification-canada-ca-us-east-1-CNAME" {
+  zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
+  name    = "pjmdrlcl2vsjodh4ruc4v2oogw5cs2cl._domainkey.notification.canada.ca"
+  type    = "CNAME"
+  records = [
+    "pjmdrlcl2vsjodh4ruc4v2oogw5cs2cl.dkim.amazonses.com"
+  ]
+  ttl = "300"
+}
+
 resource "aws_route53_record" "notification-canada-ca-SPF" {
   zone_id = aws_route53_zone.notification-canada-ca-public.zone_id
   name    = "notification.canada.ca"
