@@ -1,6 +1,6 @@
 {
     "name": "dns",
-    "image": "mcr.microsoft.com/vscode/devcontainers/base:buster@sha256:6c7a6ce6e82d5ae33e2eee794a3a933a956083021ba7fccca705b9fb5f3c7dbf",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:buster@sha256:972d339a267d89835d7a7638f5bf75498a1b30f5e0075591bdc8aff3440cc57d",
     "features": {
         "aws-cli": "latest",
         "terraform": {
