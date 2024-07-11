@@ -1,5 +1,5 @@
 # Define IAM role A with a trust policy that allows it to be assumed by terraform apply oidc role
-resource "aws_iam_role" "prod_dns_manager" {
+resource "aws_iam_role" "notify_prod_dns_manager" {
   name = "notify_prod_dns_manager"
 
   assume_role_policy = jsonencode({
