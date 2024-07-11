@@ -35,6 +35,7 @@ resource "aws_iam_policy" "prod_dns_manager_policy" {
       },
       {
         Action = [
+          "route53:GetHostedZone",
           "route53:ListHostedZones",
           "route53:GetHostedZoneCount",
           "route53:ListHostedZonesByName"
