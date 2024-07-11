@@ -1,6 +1,6 @@
 # Define IAM role A with a trust policy that allows it to be assumed by terraform apply oidc role
 resource "aws_iam_role" "prod_dns_manager" {
-  name = "prod_dns_manager"
+  name = "notify_prod_dns_manager"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
@@ -17,8 +17,8 @@ resource "aws_iam_role" "prod_dns_manager" {
 }
 
 # Define the IAM policy
-resource "aws_iam_policy" "prod_dns_manager_policy" {
-  name        = "prod_dns_manager_policy"
+resource "aws_iam_policy" "notify_prod_dns_manager_policy" {
+  name        = "notify_prod_dns_manager_policy"
   description = "Policy to manage Route53 records for notification.canada.ca hosted zone"
 
   policy = jsonencode({
@@ -49,6 +49,6 @@ resource "aws_iam_policy" "prod_dns_manager_policy" {
 
 # Attach the policy to the IAM role
 resource "aws_iam_role_policy_attachment" "prod_dns_manager_policy_attachment" {
-  role       = aws_iam_role.prod_dns_manager.name
-  policy_arn = aws_iam_policy.prod_dns_manager_policy.arn
+  role       = aws_iam_role.notify_prod_dns_manager.name
+  policy_arn = aws_iam_policy.notify_prod_dns_manager_policy.arn
 }
