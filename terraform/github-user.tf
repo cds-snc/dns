@@ -50,11 +50,16 @@ resource "aws_iam_policy" "Route53TerraformDeploy" {
         "Action" : [
           "iam:GetUser",
           "iam:GetRole",
-          "iam:GetPolicy"
+          "iam:ListRolePolicies",
+          "iam:GetPolicyVersion",
+          "iam:GetPolicy",
+          "iam:ListAttachedRolePolicies"
         ],
         "Resource" : [
-          "arn:aws:iam:::role/notify_prod_dns_manager",
-          "arn:aws:iam:::policy/notify_prod_dns_manager_policy"
+          "arn:aws:iam::866996500832:role/notify_prod_dns_manager",
+          "arn:aws:iam::866996500832:policy/notify_prod_dns_manager_policy",
+          "arn:aws:iam::866996500832:policy/Route53TerraformDeploy",
+          "arn:aws:iam::866996500832:user/dns-github-deployer"
         ]
       }
     ]
