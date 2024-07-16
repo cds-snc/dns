@@ -1,11 +1,15 @@
-variable "iam_user_tag_key" {
-  description = "The tag key for the dns-github-deployer iam user"
-  type        = string
-  sensitive   = true
+import {
+  to = aws_iam_user.dns-github-deployer
+  id = "dns-github-deployer"
 }
 
 resource "aws_iam_user" "dns-github-deployer" {
   name = "dns-github-deployer"
+}
+
+import {
+  to = aws_iam_policy.Route53TerraformDeploy
+  id = "arn:aws:iam::866996500832:policy/Route53TerraformDeploy"
 }
 
 resource "aws_iam_policy" "Route53TerraformDeploy" {
@@ -62,22 +66,12 @@ resource "aws_iam_policy" "Route53TerraformDeploy" {
   })
 }
 
-resource "aws_iam_user_policy_attachment" "dns_github_deployer_policy_attachment" {
+import {
+  to = aws_iam_user_policy_attachment.dns-github-deployer-policy-attachment
+  id = "dns-github-deployer/arn:aws:iam::866996500832:policy/Route53TerraformDeploy"
+}
+
+resource "aws_iam_user_policy_attachment" "dns-github-deployer-policy-attachment" {
   user       = "dns-github-deployer"
   policy_arn = aws_iam_policy.Route53TerraformDeploy.arn
-}
-
-import {
-  to = aws_iam_user.dns-github-deployer
-  id = "dns-github-deployer"
-
-}
-import {
-  to = aws_iam_policy.Route53TerraformDeploy
-  id = "arn:aws:iam::866996500832:policy/Route53TerraformDeploy"
-}
-
-import {
-  to = aws_iam_role_policy_attachment.dns_github_deployer_policy_attachment
-  id = "arn:aws:iam::866996500832:policy/Route53TerraformDeploy"
 }
