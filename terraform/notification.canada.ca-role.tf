@@ -8,7 +8,10 @@ resource "aws_iam_role" "notify_prod_dns_manager" {
       {
         Effect = "Allow",
         Principal = {
-          AWS = "arn:aws:iam::296255494825:role/notification-terraform-apply"
+          AWS = [
+            "arn:aws:iam::296255494825:role/notification-terraform-apply",
+            "arn:aws:iam::296255494825:role/aws-reserved/sso.amazonaws.com/ca-central-1/AWSReservedSSO_AWSAdministratorAccess_*"
+          ]
         },
         Action = "sts:AssumeRole"
       }
