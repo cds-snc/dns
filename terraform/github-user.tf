@@ -6,10 +6,6 @@ variable "iam_user_tag_key" {
 
 resource "aws_iam_user" "dns-github-deployer" {
   name = "dns-github-deployer"
-
-  tags = {
-    "${var.iam_user_tag_key}" = "cds-snc/digital-canada-ca GitHub actions"
-  }
 }
 
 resource "aws_iam_policy" "Route53TerraformDeploy" {
@@ -69,4 +65,19 @@ resource "aws_iam_policy" "Route53TerraformDeploy" {
 resource "aws_iam_user_policy_attachment" "dns_github_deployer_policy_attachment" {
   user       = "dns-github-deployer"
   policy_arn = aws_iam_policy.Route53TerraformDeploy.arn
+}
+
+import {
+  to = aws_iam_user.dns-github-deployer
+  id = "dns-github-deployer"
+
+}
+import {
+  to = aws_iam_policy.Route53TerraformDeploy
+  id = "arn:aws:iam::866996500832:policy/Route53TerraformDeploy"
+}
+
+import {
+  to = aws_iam_role_policy_attachment.dns_github_deployer_policy_attachment
+  id = "arn:aws:iam::866996500832:policy/Route53TerraformDeploy"
 }
