@@ -1,4 +1,11 @@
-# Define IAM role A with a trust policy that allows it to be assumed by terraform apply oidc role
+# Define IAM role A with a trust policy that allows it to be assumed by terraform apply role
+
+variable "aws_sso_admin_access_role_arn" {
+  description = "ARN for the AWS SSO Administrator Access role"
+  type        = string
+  sensitive   = true
+}
+
 resource "aws_iam_role" "notify_prod_dns_manager" {
   name = "notify_prod_dns_manager"
 
@@ -10,7 +17,7 @@ resource "aws_iam_role" "notify_prod_dns_manager" {
         Principal = {
           AWS = [
             "arn:aws:iam::296255494825:role/notification-terraform-apply",
-            "arn:aws:iam::296255494825:role/aws-reserved/sso.amazonaws.com/ca-central-1/AWSReservedSSO_AWSAdministratorAccess_*"
+            var.aws_sso_admin_access_role_arn
           ]
         },
         Action = "sts:AssumeRole"
