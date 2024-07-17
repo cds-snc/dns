@@ -12,6 +12,7 @@ env:
   AWS_REGION: ca-central-1
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  TF_VAR_aws_sso_admin_access_role_arn: ${{ secrets.AWS_SSO_ADMIN_ACCESS_ROLE_ARN }}
   TERRAFORM_VERSION: 1.9.2
   TF_INPUT: false
 
