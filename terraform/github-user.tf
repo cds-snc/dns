@@ -55,7 +55,8 @@ resource "aws_iam_policy" "Route53TerraformDeploy" {
           "iam:GetPolicy",
           "iam:ListAttachedRolePolicies",
           "iam:ListAttachedUserPolicies",
-          "iam:UpdateAssumeRolePolicy"
+          "iam:UpdateAssumeRolePolicy",
+          "iam:ListPolicyVersions"
         ],
         "Resource" : [
           "arn:aws:iam::866996500832:role/notify_prod_dns_manager",
