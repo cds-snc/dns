@@ -38,7 +38,8 @@ resource "aws_iam_policy" "notify_prod_dns_manager_policy" {
         Action = [
           "route53:ListResourceRecordSets",
           "route53:ChangeResourceRecordSets",
-          "route53:GetChange"
+          "route53:GetChange",
+          "route53:ListTagsForResource"
         ],
         Effect   = "Allow",
         Resource = "arn:aws:route53:::hostedzone/Z1XG153PQF3VV5"
