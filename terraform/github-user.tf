@@ -57,13 +57,21 @@ resource "aws_iam_policy" "Route53TerraformDeploy" {
           "iam:ListAttachedUserPolicies",
           "iam:UpdateAssumeRolePolicy",
           "iam:ListPolicyVersions",
-          "iam:CreatePolicyVersion"
         ],
         "Resource" : [
           "arn:aws:iam::866996500832:role/notify_prod_dns_manager",
           "arn:aws:iam::866996500832:policy/notify_prod_dns_manager_policy",
           "arn:aws:iam::866996500832:policy/Route53TerraformDeploy",
           "arn:aws:iam::866996500832:user/dns-github-deployer"
+        ]
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "iam:CreatePolicyVersion",
+        ],
+        "Resource" : [
+          "arn:aws:iam::866996500832:policy/notify_prod_dns_manager_policy",
         ]
       }
     ]
