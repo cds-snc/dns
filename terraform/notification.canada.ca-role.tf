@@ -17,6 +17,7 @@ resource "aws_iam_role" "notify_prod_dns_manager" {
         Principal = {
           AWS = [
             "arn:aws:iam::296255494825:role/notification-terraform-apply",
+            "arn:aws:iam::296255494825:role/notification-terraform-plan",
             var.aws_sso_admin_access_role_arn
           ]
         },
