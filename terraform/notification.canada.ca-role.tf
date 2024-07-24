@@ -65,3 +65,9 @@ resource "aws_iam_policy" "notify_prod_dns_manager_policy" {
     ]
   })
 }
+
+# Attach the policy to the IAM role
+resource "aws_iam_role_policy_attachment" "prod_dns_manager_policy_attachment" {
+  role       = aws_iam_role.notify_prod_dns_manager.name
+  policy_arn = aws_iam_policy.notify_prod_dns_manager_policy.arn
+}
