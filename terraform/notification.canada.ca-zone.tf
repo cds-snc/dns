@@ -2,14 +2,6 @@
 ### TO MANAGE NOTIFICATION.CANADA.CA USE NOTIFICATION-TERRAFORM REPO ###
 
 removed {
-  from = aws_route53_zone.notification-canada-ca-public
-
-  lifecycle {
-    destroy = false
-  }
-}
-
-removed {
   from = aws_route53_record.notification-canada-ca-ALIAS
 
   lifecycle {
