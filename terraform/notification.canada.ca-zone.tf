@@ -1,3 +1,6 @@
+### THESE HAVE BEEN REMOVED FROM THE TERRAFORM CODEBASE ###
+### TO MANAGE NOTIFICATION.CANADA.CA USE NOTIFICATION-TERRAFORM REPO ###
+
 removed {
   from = aws_route53_zone.notification-canada-ca-public
 
