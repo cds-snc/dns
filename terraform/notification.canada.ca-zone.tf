@@ -195,7 +195,7 @@ removed {
 
 removed {
   from = aws_route53_record.notification-canada-ca-DMARC
-  
+
   lifecycle {
     destroy = false
   }
@@ -203,7 +203,7 @@ removed {
 
 removed {
   from = aws_route53_record.amazonses-notification-canada-ca-TXT
-  
+
   lifecycle {
     destroy = false
   }
@@ -211,7 +211,7 @@ removed {
 
 removed {
   from = aws_route53_record.amazonses-mail-from-notification-canada-ca-TXT
-  
+
   lifecycle {
     destroy = false
   }
@@ -219,7 +219,7 @@ removed {
 
 removed {
   from = aws_route53_record.amazonses-mail-from-notification-canada-ca-MX
-  
+
   lifecycle {
     destroy = false
   }
@@ -227,7 +227,7 @@ removed {
 
 removed {
   from = aws_route53_record.amazonses-inbound-notification-canada-ca-MX
-  
+
   lifecycle {
     destroy = false
   }
@@ -235,7 +235,7 @@ removed {
 
 removed {
   from = aws_route53_record.status-notification-validation-CNAME
-  
+
   lifecycle {
     destroy = false
   }
@@ -243,7 +243,7 @@ removed {
 
 removed {
   from = aws_route53_record.system-status-notification-canada-ca-cname
-  
+
   lifecycle {
     destroy = false
   }
