@@ -39,11 +39,18 @@ resource "aws_iam_policy" "notify_prod_dns_manager_policy" {
         Action = [
           "route53:ListResourceRecordSets",
           "route53:ChangeResourceRecordSets",
-          "route53:GetChange",
-          "route53:ListTagsForResource"
+          "route53:ListTagsForResource",
+          "route53:UpdateHostedZoneComment"
         ],
         Effect   = "Allow",
         Resource = "arn:aws:route53:::hostedzone/Z1XG153PQF3VV5"
+      },
+      {
+        Action = [
+          "route53:GetChange"
+        ],
+        Effect   = "Allow",
+        Resource = "arn:aws:route53:::change/*"
       },
       {
         Action = [
@@ -57,10 +64,4 @@ resource "aws_iam_policy" "notify_prod_dns_manager_policy" {
       }
     ]
   })
-}
-
-# Attach the policy to the IAM role
-resource "aws_iam_role_policy_attachment" "prod_dns_manager_policy_attachment" {
-  role       = aws_iam_role.notify_prod_dns_manager.name
-  policy_arn = aws_iam_policy.notify_prod_dns_manager_policy.arn
 }
