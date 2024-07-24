@@ -234,14 +234,6 @@ removed {
 }
 
 removed {
-  from = aws_route53_record.status-notification-validation-CNAME
-
-  lifecycle {
-    destroy = false
-  }
-}
-
-removed {
   from = aws_route53_record.system-status-notification-canada-ca-cname
 
   lifecycle {
