@@ -12,7 +12,8 @@ resource "aws_iam_role" "notify_prod_dns_manager" {
           AWS = [
             "arn:aws:iam::296255494825:user/notification-production-tf-user",
             "arn:aws:iam::296255494825:role/notification-terraform-apply",
-            "arn:aws:iam::296255494825:role/notification-terraform-plan"
+            "arn:aws:iam::296255494825:role/notification-terraform-plan",
+            "arn:aws:sts::296255494825:assumed-role/notification-terraform-plan/NotifyTerraformPlan"
           ]
         },
         Action = "sts:AssumeRole"
