@@ -1,11 +1,5 @@
 # Define IAM role A with a trust policy that allows it to be assumed by terraform apply role
 
-variable "aws_sso_admin_access_role_arn" {
-  description = "ARN for the AWS SSO Administrator Access role"
-  type        = string
-  sensitive   = true
-}
-
 resource "aws_iam_role" "notify_prod_dns_manager" {
   name = "notify_prod_dns_manager"
 
@@ -16,9 +10,10 @@ resource "aws_iam_role" "notify_prod_dns_manager" {
         Effect = "Allow",
         Principal = {
           AWS = [
+            "arn:aws:iam::296255494825:user/notification-production-tf-user",
             "arn:aws:iam::296255494825:role/notification-terraform-apply",
             "arn:aws:iam::296255494825:role/notification-terraform-plan",
-            var.aws_sso_admin_access_role_arn
+            "arn:aws:sts::296255494825:assumed-role/notification-terraform-plan/NotifyTerraformPlan"
           ]
         },
         Action = "sts:AssumeRole"
