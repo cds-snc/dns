@@ -13,7 +13,7 @@ resource "aws_route53_record" "aurora-gccloudone-alpha-canada-ca-CNAME" {
   name    = "aurora.gccloudone.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "aurora.gccloudone.github.io"
+    "gccloudone.github.io"
   ]
   ttl = "300"
 }
