@@ -16,7 +16,7 @@ resource "aws_route53_record" "deliverance-verification-alpha-canada-ca-NS" {
   name    = "deliverance-verification.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns-1965.awsdns-53.co.uk",  
+    "ns-1965.awsdns-53.co.uk",
     "ns-579.awsdns-08.net",
     "ns-1385.awsdns-45.org",
     "ns-46.awsdns-05.com"
