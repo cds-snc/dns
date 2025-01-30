@@ -88,7 +88,7 @@ resource "aws_route53_record" "hazard-risk-search-ps-alpha-canada-ca-CNAME" {
   name    = "hazard-risk-search.ps.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "flood-risk-portal.prod.cloud.statcan.ca"
+    "flood-risk-portal.prod.cloud.statcan.ca/en-CA"
   ]
   ttl = "300"
 }
@@ -108,7 +108,7 @@ resource "aws_route53_record" "recherche-aleas-risques-ps-alpha-canada-ca-CNAME"
   name    = "recherche-aleas-risques.ps.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "flood-risk-portal.prod.cloud.statcan.ca"
+    "flood-risk-portal.prod.cloud.statcan.ca/fr-CA"
   ]
   ttl = "300"
 }
