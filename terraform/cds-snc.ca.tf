@@ -389,3 +389,17 @@ resource "aws_route53_record" "_github-challenge-cds-snc-org" {
   ]
   ttl = "1800"
 }
+
+# Valentine 
+resource "aws_route53_record" "valentine-cds-snc-NS" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "valentine.cds-snc.ca"
+  type    = "NS"
+  records = [
+    "ns-1727.awsdns-23.co.uk.",
+    "ns-314.awsdns-39.com.",
+    "ns-926.awsdns-51.net.",
+    "ns-1042.awsdns-02.org."
+  ]
+  ttl = "1800"
+}
