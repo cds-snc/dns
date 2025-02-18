@@ -403,3 +403,15 @@ resource "aws_route53_record" "valentine-cds-snc-NS" {
   ]
   ttl = "1800"
 }
+
+
+# Qualtrics
+resource "aws_route53_record" "qualtrics-cds-snc-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "experience.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    cdssnc-primary.vanitydomains.qualtrics.com
+  ]
+  ttl = "1800"
+}
