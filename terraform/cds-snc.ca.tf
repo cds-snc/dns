@@ -411,7 +411,7 @@ resource "aws_route53_record" "qualtrics-cds-snc-CNAME" {
   name    = "experience.cds-snc.ca"
   type    = "CNAME"
   records = [
-    cdssnc-primary.vanitydomains.qualtrics.com
+    "cdssnc-primary.vanitydomains.qualtrics.com"
   ]
   ttl = "1800"
 }
