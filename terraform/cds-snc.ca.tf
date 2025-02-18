@@ -415,3 +415,13 @@ resource "aws_route53_record" "qualtrics-cds-snc-CNAME" {
   ]
   ttl = "1800"
 }
+
+resource "aws_route53_record" "qualtrics-cds-snc-TXT" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "experience._domainkey.cds-snc.ca"
+  type    = "TXT"
+  records = [
+    "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCDdwCodgUYxC4dYhuCicba5NvtCYPDMTkcL5iOrSGXBCX7AZ1wykjTJr5s5ZJZqIaUjigx4qp6rY7o3xO/2EL5+ldET3gk/h6MsoTSF7pRE5vsGFdmO4mIG6Vi7EBG+z1FAPsWQf0QvFGktHGkXkBGIZzA1eH56G7qj2IewufcBwIDAQAB"
+  ]
+  ttl = "1800"
+}
