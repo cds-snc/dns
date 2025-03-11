@@ -1,12 +1,9 @@
-resource "aws_route53_record" "gccatalogue-alpha-canada-ca-NS" {
+resource "aws_route53_record" "gccatalogue-alpha-canada-ca-CNAME" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "gccatalogue.alpha.canada.ca"
-  type    = "NS"
+  type    = "CNAME"
   records = [
-    "ns1-02.azure-dns.com",
-    "ns2-02.azure-dns.net",
-    "ns3-02.azure.dns.org",
-    "ns4-02.azure-dns.info"
+    "gcdigitalpolicy.github.io"
   ]
   ttl = "300"
 }
