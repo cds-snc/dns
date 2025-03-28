@@ -3,10 +3,10 @@ resource "aws_route53_record" "issue-verify-alpha-canada-ca-NS" {
   name    = "issue-verify.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns-1714.awsdns-22.co.uk",
-    "ns-566.awsdns-06.net",
-    "ns-446.awsdns-55.com",
-    "ns-1257.awsdns-29.org"
+    "ns1-08.azure-dns.com",
+    "ns2-08.azure-dns.net",
+    "ns3-08.azure-dns.org",
+    "ns4-08.azure-dns.info"
   ]
   ttl = "300"
 }
