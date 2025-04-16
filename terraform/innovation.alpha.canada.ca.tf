@@ -7,6 +7,6 @@ resource "aws_route53_record" "innovation-alpha-canada-ca-NS" {
     "ns2-04.azure-dns.net.",
     "ns3-04.azure-dns.org.",
     "ns4-04.azure-dns.info."
-]
+  ]
   ttl = "300"
 }
