@@ -13,7 +13,9 @@ resource "aws_iam_role" "notify_prod_dns_manager" {
             "arn:aws:iam::296255494825:user/notification-production-tf-user",
             "arn:aws:iam::296255494825:role/notification-terraform-apply",
             "arn:aws:iam::296255494825:role/notification-terraform-plan",
-            "arn:aws:sts::296255494825:assumed-role/notification-terraform-plan/NotifyTerraformPlan"
+            "arn:aws:sts::296255494825:assumed-role/notification-terraform-plan/NotifyTerraformPlan",
+            "arn:aws:sts::866996500832:assumed-role/AWSReservedSSO_Route53-Notify-Admin_af70537e33b70fd6/ben.larabie@cds-snc.ca"
+
           ]
         },
         Action = "sts:AssumeRole"
