@@ -18,7 +18,7 @@ Do you want a pretty URL like `notification.alpha.canada.ca` for your cool new p
 
 To request a new subdomain, create a `aws_route53_record` terraform entry and submit an [issue](https://github.com/cds-snc/dns/issues/new).  A member of the Platform team will review the request and either approve it, or circle back with additional questions.
 
-We are investigating how to make this easier, but if anyone wants to help out, please reach out to platform-sre-security-support@cds-snc.ca
+We are investigating how to make this easier, but if anyone wants to help out, please reach out to sre-ifs@cds-snc.ca
 
 ### Examples
 
