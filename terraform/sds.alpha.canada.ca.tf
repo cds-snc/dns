@@ -3,10 +3,10 @@ resource "aws_route53_record" "sds-alpha-canada-ca-NS" {
   name    = "sds.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns1-08.azure-dns.com.",
-    "ns2-08.azure-dns.net.",
-    "ns3-08.azure-dns.org",
-    "ns4-08.azure-dns.info"
+    "ns1-09.azure-dns.com.",
+    "ns2-09.azure-dns.net.",
+    "ns3-09.azure-dns.org.",
+    "ns4-09.azure-dns.info."
   ]
   ttl = "300"
 }
