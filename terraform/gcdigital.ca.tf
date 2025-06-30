@@ -45,7 +45,7 @@ resource "aws_route53_record" "ftp-gcdigital-ca-CNAME" {
   type    = "CNAME"
   records = ["gcdigital.ca."]
   ttl     = 3600
-  
+
 }
 
 resource "aws_route53_record" "www-gcdigital-ca-CNAME" {
@@ -54,5 +54,5 @@ resource "aws_route53_record" "www-gcdigital-ca-CNAME" {
   type    = "CNAME"
   records = ["gcdigital.ca."]
   ttl     = 3600
-  
+
 }
