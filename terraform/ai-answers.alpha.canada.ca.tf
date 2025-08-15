@@ -17,10 +17,10 @@ resource "aws_route53_record" "reponses-ia-alpha-canada-ca-NS" {
   type    = "NS"
   ttl     = 300
   records = [
-    "ns-340.awsdns-42.com.",
-    "ns-1303.awsdns-34.org.",
-    "ns-1561.awsdns-03.co.uk.",
-    "ns-981.awsdns-58.net."
+    "ns-198.awsdns-24.com.",
+    "ns-1738.awsdns-25.co.uk.",
+    "ns-647.awsdns-16.net.",
+    "ns-1448.awsdns-53.org."
   ]
 }
 
