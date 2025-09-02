@@ -8,7 +8,7 @@ resource "aws_route53_record" "sp-ssc-alpha-canada-ca-NS" {
     "ns3-35.azure-dns.org",
     "ns4-35.azure-dns.info"
   ]
-  ttl = 300
+  ttl = "300"
 }
 
 resource "terraform_data" "meta-sp-ssc-alpha-canada-ca-NS" {
