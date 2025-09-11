@@ -187,7 +187,8 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
     "v=spf1 include:_spf.google.com include:email.freshdesk.com include:spf.happyfox.com ~all",
     "apple-domain-verification=4YW6F7vBgCWOVoTh",
     "miro-verification=b613aeb17bf7dfe250cf22d5483c1a352ea0c2f1",
-    "1password-site-verification=SQMY32ZPXJAUDLOODGRBDPPR5Q"
+    "1password-site-verification=SQMY32ZPXJAUDLOODGRBDPPR5Q",
+    "figma-domain-verification=16d1dad1fe0cfd4f60d293c59bea524ddf20d5e4371d5109a6871071d63421f4-1757620344"
   ]
   ttl = "3600"
 
@@ -422,16 +423,6 @@ resource "aws_route53_record" "qualtrics-cds-snc-TXT" {
   type    = "TXT"
   records = [
     "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCDdwCodgUYxC4dYhuCicba5NvtCYPDMTkcL5iOrSGXBCX7AZ1wykjTJr5s5ZJZqIaUjigx4qp6rY7o3xO/2EL5+ldET3gk/h6MsoTSF7pRE5vsGFdmO4mIG6Vi7EBG+z1FAPsWQf0QvFGktHGkXkBGIZzA1eH56G7qj2IewufcBwIDAQAB"
-  ]
-  ttl = "1800"
-}
-
-resource "aws_route53_record" "figma-cds-snc-TXT" {
-  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
-  name    = "figma-cds-snc-TXT"
-  type    = "TXT"
-  records = [
-    "figma-domain-verification=16d1dad1fe0cfd4f60d293c59bea524ddf20d5e4371d5109a6871071d63421f4-1757620344"
   ]
   ttl = "1800"
 }
