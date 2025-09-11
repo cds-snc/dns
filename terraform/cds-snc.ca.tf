@@ -425,3 +425,13 @@ resource "aws_route53_record" "qualtrics-cds-snc-TXT" {
   ]
   ttl = "1800"
 }
+
+resource "aws_route53_record" "figma-cds-snc-TXT" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "figma-cds-snc-TXT"
+  type    = "TXT"
+  records = [
+    "figma-domain-verification=16d1dad1fe0cfd4f60d293c59bea524ddf20d5e4371d5109a6871071d63421f4-1757620344"
+  ]
+  ttl = "1800"
+}
