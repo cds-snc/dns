@@ -10,3 +10,11 @@ resource "aws_route53_record" "sp-ssc-alpha-canada-ca-NS" {
   ]
   ttl = "300"
 }
+
+resource "terraform_data" "meta-sp-ssc-alpha-canada-ca-NS" {
+  input = {
+    resource = aws_route53_record.sp-ssc-alpha-canada-ca-NS.name
+    owner    = "azurescience-scienceazure@ssc-spc.gc.ca"
+    purpose  = "Nameservers managed by the SSC Science Program"
+  }
+}
