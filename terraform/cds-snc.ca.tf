@@ -337,6 +337,27 @@ resource "aws_route53_record" "happyfox-dkim-01-cds-snc-ca-CNAME" {
   ttl = "1800"
 }
 
+# Salesforce DKIM records
+resource "aws_route53_record" "salesforce-dkim-sfi-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "sfi._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "sfi.33h9xl.custdkim.salesforce.com."
+  ]
+  ttl = "1800"
+}
+
+resource "aws_route53_record" "salesforce-dkim-SF2-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "SF2._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "SF2.yu6fhb.custdkim.salesforce.com."
+  ]
+  ttl = "1800"
+}
+
 resource "aws_route53_record" "happyfox-dkim-02-cds-snc-ca-CNAME" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
   name    = "happyfox2._domainkey.cds-snc.ca"
