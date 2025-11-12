@@ -188,7 +188,8 @@ resource "aws_route53_record" "cds-snc-ca-TXT" {
     "apple-domain-verification=4YW6F7vBgCWOVoTh",
     "miro-verification=b613aeb17bf7dfe250cf22d5483c1a352ea0c2f1",
     "1password-site-verification=SQMY32ZPXJAUDLOODGRBDPPR5Q",
-    "figma-domain-verification=16d1dad1fe0cfd4f60d293c59bea524ddf20d5e4371d5109a6871071d63421f4-1757620344"
+    "figma-domain-verification=16d1dad1fe0cfd4f60d293c59bea524ddf20d5e4371d5109a6871071d63421f4-1757620344",
+    "zapier-domain-verification-challenge=eb3188eb-7860-4405-9f83-8535eec1de68"
   ]
   ttl = "3600"
 
