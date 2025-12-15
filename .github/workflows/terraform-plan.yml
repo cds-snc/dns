@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
       - name: Setup Terraform tools
-        uses: cds-snc/terraform-tools-setup@v1
+        uses: cds-snc/terraform-tools-setup@5f76a50c0b5f0e133634fecc8dd42f67db57bc05 # v1.1.0
 
       - name: Terraform plan
         uses: cds-snc/terraform-plan@359927038664bc1647919e18ca36a3b551445131 # v3.6.1
