@@ -3,10 +3,10 @@ resource "aws_route53_record" "cra-arc-alpha-canada-ca-NS" {
   name    = "cra-arc.alpha.canada.ca"
   type    = "NS"
   records = [
-    "ns1-06.azure-dns.com",
-    "ns2-06.azure-dns.net",
-    "ns3-06.azure-dns.org",
-    "ns4-06.azure-dns.info",
+    "ns-369.awsdns-46.com",
+    "ns-588.awsdns-09.net",
+    "ns-1507.awsdns-60.org",
+    "ns-1911.awsdns-46.co.uk",
   ]
   ttl = "300"
 }
