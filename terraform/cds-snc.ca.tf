@@ -450,3 +450,14 @@ resource "aws_route53_record" "qualtrics-cds-snc-TXT" {
   ]
   ttl = "1800"
 }
+
+# GitHub Pages
+resource "aws_route53_record" "github-pages-cds-snc-TXT" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "_github-pages-challenge-cds-snc"
+  type    = "TXT"
+  records = [
+    "ea197e79248967b79cd47d25f5938e"
+  ]
+  ttl = 300
+}
