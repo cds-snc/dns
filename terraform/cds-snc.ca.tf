@@ -452,7 +452,7 @@ resource "aws_route53_record" "qualtrics-cds-snc-TXT" {
 }
 
 # GitHub Pages
-resource "aws_route_53_record" "github-pages-cds-snc-TXT" {
+resource "aws_route53_record" "github-pages-cds-snc-TXT" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
   name    = "_github-pages-challenge-cds-snc"
   type    = "TXT"
