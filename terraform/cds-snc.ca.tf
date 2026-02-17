@@ -6,7 +6,7 @@ resource "aws_route53_record" "cds-snc-ca-A" {
   alias {
     name                   = aws_cloudfront_distribution.cds-snc-ca.domain_name
     zone_id                = aws_cloudfront_distribution.cds-snc-ca.hosted_zone_id
-    evaluate_target_health = false 
+    evaluate_target_health = false
   }
 }
 
