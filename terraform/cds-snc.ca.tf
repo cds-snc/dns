@@ -464,7 +464,6 @@ resource "aws_route53_record" "github-pages-cds-snc-TXT" {
 
 # Create a certificate for the domain name and apex. ACM Certificate (must be in us-east-1 for CloudFront)
 resource "aws_acm_certificate" "cds-snc-ca" {
-  provider                  = aws.us-east-1
   domain_name               = "cds-snc.ca"
   subject_alternative_names = ["www.cds-snc.ca"]
   validation_method         = "DNS"
@@ -492,7 +491,6 @@ resource "aws_route53_record" "cds-snc-ca-cert-validation" {
 }
 
 resource "aws_acm_certificate_validation" "cds-snc-ca" {
-  provider                = aws.us-east-1
   certificate_arn         = aws_acm_certificate.cds-snc-ca.arn
   validation_record_fqdns = [for record in aws_route53_record.cds-snc-ca-cert-validation : record.fqdn]
 }
