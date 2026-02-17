@@ -4,9 +4,9 @@ resource "aws_route53_record" "cds-snc-ca-A" {
   type    = "A"
 
   alias {
-    name                   = "s3-website-us-east-1.amazonaws.com"
-    zone_id                = "Z3AQBSTGFYJSTF"
-    evaluate_target_health = true
+    name                   = aws_cloudfront_distribution.cds-snc-ca.domain_name
+    zone_id                = aws_cloudfront_distribution.cds-snc-ca.hosted_zone_id
+    evaluate_target_health = false 
   }
 }
 
@@ -460,4 +460,136 @@ resource "aws_route53_record" "github-pages-cds-snc-TXT" {
     "ea197e79248967b79cd47d25f5938e"
   ]
   ttl = 300
+}
+
+# Create a certificate for the domain name and apex. ACM Certificate (must be in us-east-1 for CloudFront)
+resource "aws_acm_certificate" "cds-snc-ca" {
+  provider                  = aws.us-east-1
+  domain_name               = "cds-snc.ca"
+  subject_alternative_names = ["www.cds-snc.ca"]
+  validation_method         = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+# Validate the certificate
+resource "aws_route53_record" "cds-snc-ca-cert-validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.cds-snc-ca.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
+
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = each.value.name
+  type    = each.value.type
+  ttl     = 60
+  records = [each.value.record]
+}
+
+resource "aws_acm_certificate_validation" "cds-snc-ca" {
+  provider                = aws.us-east-1
+  certificate_arn         = aws_acm_certificate.cds-snc-ca.arn
+  validation_record_fqdns = [for record in aws_route53_record.cds-snc-ca-cert-validation : record.fqdn]
+}
+
+# CloudFront Function
+resource "aws_cloudfront_function" "cds-snc-ca-security-txt" {
+  name    = "cds-snc-ca-security-txt"
+  runtime = "cloudfront-js-2.0"
+  publish = true
+  code    = <<-EOF
+    function handler(event) {
+      var uri = event.request.uri;
+      
+      if (uri === '/.well-known/security.txt') {
+        return {
+          statusCode: 200,
+          statusDescription: 'OK',
+          headers: {
+            'content-type': { value: 'text/plain' }
+          },
+          body: 'Contact: mailto:ZZTBSCYBERS@tbs-sct.gc.ca\nContact: https://hackerone.com/tbs-sct/\nPolicy: https://hackerone.com/tbs-sct/policy\nCanonical: https://alpha.canada.ca/.well-known/security.txt\nPreferred-Languages: en, fr\nExpires: 2026-03-02T12:00:00.000Z'
+        };
+      }
+      
+      return {
+        statusCode: 301,
+        statusDescription: 'Moved Permanently',
+        headers: {
+          'location': { value: 'https://digital.canada.ca/' }
+        }
+      };
+    }
+  EOF
+}
+
+# CloudFront Distribution
+resource "aws_cloudfront_distribution" "cds-snc-ca" {
+  enabled         = true
+  is_ipv6_enabled = true
+  aliases         = ["cds-snc.ca", "www.cds-snc.ca"]
+  comment         = "cds-snc.ca apex and www - security.txt and redirect"
+
+  # Dummy origin (required by CloudFront but never hit)
+  origin {
+    domain_name = "example.com"
+    origin_id   = "dummy"
+    custom_origin_config {
+      http_port              = 80
+      https_port             = 443
+      origin_protocol_policy = "https-only"
+      origin_ssl_protocols   = ["TLSv1.2"]
+    }
+  }
+
+  default_cache_behavior {
+    allowed_methods        = ["GET", "HEAD"]
+    cached_methods         = ["GET", "HEAD"]
+    target_origin_id       = "dummy"
+    viewer_protocol_policy = "redirect-to-https"
+
+    forwarded_values {
+      query_string = false
+      cookies {
+        forward = "none"
+      }
+    }
+
+    function_association {
+      event_type   = "viewer-request"
+      function_arn = aws_cloudfront_function.cds-snc-ca-security-txt.arn
+    }
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
+  viewer_certificate {
+    acm_certificate_arn      = aws_acm_certificate.cds-snc-ca.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
+  }
+
+  depends_on = [aws_acm_certificate_validation.cds-snc-ca]
+}
+
+# Create www A record (new)
+resource "aws_route53_record" "www-cds-snc-ca-A" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "www.cds-snc.ca"
+  type    = "A"
+
+  alias {
+    name                   = aws_cloudfront_distribution.cds-snc-ca.domain_name
+    zone_id                = aws_cloudfront_distribution.cds-snc-ca.hosted_zone_id
+    evaluate_target_health = false
+  }
 }
