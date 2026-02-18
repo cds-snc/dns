@@ -28,6 +28,57 @@ resource "aws_iam_policy" "Route53TerraformDeploy" {
       {
         "Effect" : "Allow",
         "Action" : [
+          "acm:RequestCertificate",
+          "acm:DescribeCertificate",
+          "acm:DeleteCertificate",
+          "acm:ListTagsForCertificate",
+          "acm:AddTagsToCertificate"
+        ],
+        "Resource" : "arn:aws:acm:us-east-1:866996500832:certificate/*"
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "acm:ListCertificates"
+        ],
+        "Resource" : "*"
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "cloudfront:CreateFunction",
+          "cloudfront:UpdateFunction",
+          "cloudfront:DeleteFunction",
+          "cloudfront:DescribeFunction",
+          "cloudfront:PublishFunction",
+          "cloudfront:GetFunction"
+        ],
+        "Resource" : "arn:aws:cloudfront::866996500832:function/cds-snc-ca-security-txt"
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "cloudfront:CreateDistribution",
+          "cloudfront:GetDistribution",
+          "cloudfront:GetDistributionConfig",
+          "cloudfront:UpdateDistribution",
+          "cloudfront:DeleteDistribution",
+          "cloudfront:TagResource",
+          "cloudfront:ListTagsForResource"
+        ],
+        "Resource" : "arn:aws:cloudfront::866996500832:distribution/*"
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
+          "cloudfront:ListDistributions",
+          "cloudfront:ListFunctions"
+        ],
+        "Resource" : "*"
+      },
+      {
+        "Effect" : "Allow",
+        "Action" : [
           "s3:ListBucket"
         ],
         "Resource" : [
