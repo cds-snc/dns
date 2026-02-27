@@ -34,7 +34,7 @@ resource "aws_route53_record" "ai-answers-alpha-canada-ca-TXT" {
   ttl = "3600"
 }
 
-resource "aws_route53_record" "letsencrypt_bootstrap" {
+resource "aws_route53_record" "ai-answers-letsencrypt-bootstrap" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "_acme-challenge.ai-answers.alpha.canada.ca."
   type    = "TXT"
