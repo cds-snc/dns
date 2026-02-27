@@ -42,7 +42,7 @@ resource "aws_route53_record" "letsencrypt_bootstrap" {
   records = ["ucK5ahruXj2nYk07dr_UFK63d1jnkyr6lXXDPUMrSzk"]
 }
 
-resource "aws_route53_record" "akamai_domain_ownership" {
+resource "aws_route53_record" "ai-answers-akamai-domain-ownership" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "_akamai-host-challenge.ai-answers.alpha.canada.ca"
   type    = "TXT"
