@@ -40,14 +40,14 @@ resource "aws_route53_record" "letsencrypt_bootstrap" {
   name    = "_acme-challenge.ai-answers.alpha.canada.ca."
   type    = "TXT"
   ttl     = 60
-  records = ["\"ucK5ahruXj2nYk07dr_UFK63d1jnkyr6lXXDPUMrSzk\""]
+  records = ["ucK5ahruXj2nYk07dr_UFK63d1jnkyr6lXXDPUMrSzk"]
 }
 
 resource "aws_route53_record" "akamai_domain_ownership" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "_akamai-host-challenge.ai-answers.alpha.canada.ca"
   type    = "TXT"
-  records = ["\"1WxKKGqmCDZaioNzps71yXa88kSG9alusI7yJsm1r-SV8GaIIlmGeAA\""]
+  records = ["1WxKKGqmCDZaioNzps71yXa88kSG9alusI7yJsm1r-SV8GaIIlmGeAA"]
 
 }
 
