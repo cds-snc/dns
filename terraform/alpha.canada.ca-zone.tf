@@ -43,3 +43,23 @@ resource "aws_route53_record" "_dbb14456ed8ab3deed1f05507ff40373-alpha-canada-ca
   ttl = "300"
 
 }
+
+resource "aws_route53_record" "ai-answers-alpha-canada-ca-CNAME" {
+  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name    = "ai-answers.alpha.canada.ca"
+  type    = "CNAME"
+  records = [
+    "ai-answers.alpha.canada.ca.edgekey.net"
+  ]
+  ttl = "300"
+}
+
+resource "aws_route53_record" "reponses-ia-alpha-canada-ca-CNAME" {
+  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name    = "reponses-ia.alpha.canada.ca"
+  type    = "CNAME"
+  records = [
+    "ai-answers.alpha.canada.ca.edgekey.net"
+  ]
+  ttl = "300"
+}
