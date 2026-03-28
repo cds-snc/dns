@@ -20,7 +20,7 @@ jobs:
             ./bin/get-dns-records.sh ./terraform | sort | uniq > domains.txt
 
         - name: Check DNS records
-          uses: maxneuvians/dns-hijack-check-action@main
+          uses: maxneuvians/dns-hijack-check-action@e2dbdafa0eee320d72e726e81c21cb1ca2e0faf4 # main
 
         - name: Notify if dangling records found
           if: ${{ hashFiles('critical.json') != '' || hashFiles('potential.json') != '' }}
