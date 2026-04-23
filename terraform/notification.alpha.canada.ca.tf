@@ -2,9 +2,7 @@ locals {
   notification_alb                              = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
   notification_zone_id                          = "ZQSVJUPU6J1EY"
   api_gateway_regional_zone_id                  = "Z19DQILCV0OWEC" # ca-central-1
-  api_lambda_gateway_domain_name_api_lambda     = "d-0jho4qbdqi.execute-api.ca-central-1.amazonaws.com"
-  api_lambda_gateway_domain_name_alt_api_lambda = "d-f9v7fu3260.execute-api.ca-central-1.amazonaws.com"
-  api_lambda_gateway_domain_name_api            = "d-jwtzdgd9qg.execute-api.ca-central-1.amazonaws.com"
+  api_k8s_domain_name                           = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
 }
 
 resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
@@ -23,10 +21,11 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
   name    = "api.notification.alpha.canada.ca"
   type    = "A"
+  set_identifier  = "loadbalancer"
 
   alias {
-    name                   = local.api_lambda_gateway_domain_name_alt_api_lambda
-    zone_id                = local.api_gateway_regional_zone_id
+    name                   = local.api_k8s_domain_name
+    zone_id                = local.notification_zone_id
     evaluate_target_health = true
   }
 }
