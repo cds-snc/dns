@@ -20,7 +20,6 @@ resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
   zone_id        = aws_route53_zone.alpha-canada-ca-public.zone_id
   name           = "api.notification.alpha.canada.ca"
   type           = "A"
-  set_identifier = "loadbalancer"
 
   alias {
     name                   = local.notification_alb
