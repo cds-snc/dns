@@ -17,9 +17,9 @@ resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
 }
 
 resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
-  zone_id        = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name           = "api.notification.alpha.canada.ca"
-  type           = "A"
+  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name    = "api.notification.alpha.canada.ca"
+  type    = "A"
 
   alias {
     name                   = local.notification_alb
