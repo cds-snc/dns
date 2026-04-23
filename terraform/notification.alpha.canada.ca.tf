@@ -1,7 +1,7 @@
 locals {
-  notification_alb                              = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
-  notification_zone_id                          = "ZQSVJUPU6J1EY"
-  api_gateway_regional_zone_id                  = "Z19DQILCV0OWEC" # ca-central-1
+  notification_alb             = "notification-production-alb-1685085140.ca-central-1.elb.amazonaws.com"
+  notification_zone_id         = "ZQSVJUPU6J1EY"
+  api_gateway_regional_zone_id = "Z19DQILCV0OWEC" # ca-central-1
 }
 
 resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
@@ -17,10 +17,10 @@ resource "aws_route53_record" "notification-alpha-canada-ca-ALIAS" {
 }
 
 resource "aws_route53_record" "api-notification-alpha-canada-ca-A" {
-  zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name    = "api.notification.alpha.canada.ca"
-  type    = "A"
-  set_identifier  = "loadbalancer"
+  zone_id        = aws_route53_zone.alpha-canada-ca-public.zone_id
+  name           = "api.notification.alpha.canada.ca"
+  type           = "A"
+  set_identifier = "loadbalancer"
 
   alias {
     name                   = local.notification_alb
