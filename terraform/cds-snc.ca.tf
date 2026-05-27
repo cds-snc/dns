@@ -405,12 +405,24 @@ resource "aws_route53_record" "cloud-spend-cds-snc-CNAME" {
 }
 
 
+# github organization
 resource "aws_route53_record" "_github-challenge-cds-snc-org" {
   zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
   name    = "_github-challenge-cds-snc-org"
   type    = "TXT"
   records = [
     "05a2344682"
+  ]
+  ttl = "1800"
+}
+
+# github enterprise
+resource "aws_route53_record" "_gh-cds-snc-e" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "_gh-cds-snc-e"
+  type    = "TXT"
+  records = [
+    "e9e9c5f7e5"
   ]
   ttl = "1800"
 }
