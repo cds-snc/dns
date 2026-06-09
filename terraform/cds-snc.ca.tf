@@ -603,3 +603,34 @@ resource "aws_route53_record" "www-cds-snc-ca-A" {
     evaluate_target_health = false
   }
 }
+
+# DKIM records for SES domain verification in the Management account.
+resource "aws_route53_record" "pgq3qp4yetdsoqridqxkouknp2uetwjt-_domainkey-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "pgq3qp4yetdsoqridqxkouknp2uetwjt._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "pgq3qp4yetdsoqridqxkouknp2uetwjt.dkim.amazonses.com"
+  ]
+  ttl = "1800"
+}
+
+resource "aws_route53_record" "dkim-62ve7y7hc3uyg77qmpbbbtov53if5rgc-_domainkey-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "62ve7y7hc3uyg77qmpbbbtov53if5rgc._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "62ve7y7hc3uyg77qmpbbbtov53if5rgc.dkim.amazonses.com"
+  ]
+  ttl = "1800"
+}
+
+resource "aws_route53_record" "izw7fypdaxoz6gjuexo5zoy343a4vb4f-_domainkey-cds-snc-ca-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "izw7fypdaxoz6gjuexo5zoy343a4vb4f._domainkey.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "izw7fypdaxoz6gjuexo5zoy343a4vb4f.dkim.amazonses.com"
+  ]
+  ttl = "1800"
+}
