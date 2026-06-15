@@ -603,3 +603,14 @@ resource "aws_route53_record" "www-cds-snc-ca-A" {
     evaluate_target_health = false
   }
 }
+
+# GitHub Copilot Metrics page
+resource "aws_route53_record" "copilot-metrics-cds-snc-CNAME" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "copilot-metrics.cds-snc.ca"
+  type    = "CNAME"
+  records = [
+    "cds-snc.github.io"
+  ]
+  ttl = "1800"
+}
