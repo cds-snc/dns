@@ -441,6 +441,20 @@ resource "aws_route53_record" "valentine-cds-snc-NS" {
   ttl = "1800"
 }
 
+# op-bridge subdomain delegation
+resource "aws_route53_record" "op-bridge-cds-snc-NS" {
+  zone_id = aws_route53_zone.cds-snc-ca-public.zone_id
+  name    = "op-bridge.cds-snc.ca"
+  type    = "NS"
+  records = [
+    "ns-1096.awsdns-09.org.",
+    "ns-857.awsdns-43.net.",
+    "ns-1540.awsdns-00.co.uk.",
+    "ns-142.awsdns-17.com."
+  ]
+  ttl = "1800"
+}
+
 
 # Qualtrics
 resource "aws_route53_record" "qualtrics-cds-snc-CNAME" {
