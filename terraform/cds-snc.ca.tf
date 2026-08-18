@@ -447,10 +447,10 @@ resource "aws_route53_record" "op-bridge-cds-snc-NS" {
   name    = "op-bridge.cds-snc.ca"
   type    = "NS"
   records = [
-    "ns-1096.awsdns-09.org.",
-    "ns-857.awsdns-43.net.",
-    "ns-1540.awsdns-00.co.uk.",
-    "ns-142.awsdns-17.com."
+    "ns-928.awsdns-52.net.",
+    "ns-9.awsdns-01.com.",
+    "ns-1764.awsdns-28.co.uk.",
+    "ns-1382.awsdns-44.org."
   ]
   ttl = "1800"
 }
