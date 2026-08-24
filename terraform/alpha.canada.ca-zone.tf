@@ -22,23 +22,23 @@ resource "aws_route53_record" "alpha-canada-ca-alias" {
   }
 }
 
-resource "aws_route53_record" "_b3259586aedbdb670a1126167ef4fad9-alpha-canada-ca-CNAME" {
+resource "aws_route53_record" "ai-answers-acm-validation" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name    = "_b3259586aedbdb670a1126167ef4fad9.alpha.canada.ca"
+  name    = "_5707bb93bbcbb5aed0be674ebaa71764.ai-answers.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "_86256a6d6c75bfd5e57ca09b9f3d51b8.kirrbxfjtw.acm-validations.aws"
+    "_5311683aec2b649de50998c8727cff32.xlfgrmvvlj.acm-validations.aws."
   ]
   ttl = "300"
 
 }
 
-resource "aws_route53_record" "_dbb14456ed8ab3deed1f05507ff40373-alpha-canada-ca-CNAME" {
+resource "aws_route53_record" "reponses-ia-acm-validation" {
   zone_id = aws_route53_zone.alpha-canada-ca-public.zone_id
-  name    = "_dbb14456ed8ab3deed1f05507ff40373.alpha.canada.ca"
+  name    = "_1d0d8a2a7dded94a02d05e9b8ebfe919.reponses-ia.alpha.canada.ca"
   type    = "CNAME"
   records = [
-    "_900ac2c0ff88c1899ffb3e47cd4b42c8.wggjkglgrm.acm-validations.aws."
+    "_27e44abc303a70a8d7e6aaa65c5c2047.xlfgrmvvlj.acm-validations.aws."
   ]
   ttl = "300"
 
