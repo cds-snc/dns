@@ -554,10 +554,11 @@ resource "aws_cloudfront_function" "cds-snc-ca-security-txt" {
 
 # CloudFront Distribution
 resource "aws_cloudfront_distribution" "cds-snc-ca" {
-  enabled         = true
-  is_ipv6_enabled = true
-  aliases         = ["cds-snc.ca", "www.cds-snc.ca"]
-  comment         = "cds-snc.ca apex and www - security.txt and redirect"
+  enabled             = true
+  is_ipv6_enabled     = true
+  default_root_object = "index.html"
+  aliases             = ["cds-snc.ca", "www.cds-snc.ca"]
+  comment             = "cds-snc.ca apex and www - security.txt and redirect"
 
   # Dummy origin (required by CloudFront but never hit)
   origin {
